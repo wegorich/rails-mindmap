@@ -15,7 +15,7 @@
     .navbar.navbar-fixed-top.hidden-tablet.hidden-phone
       .navbar-inner
         %div{:class => @container_class || 'container'}
-          = link_to image_tag('logo_small.png', :boreder => 0, :size => '37x20', :style => 'padding-right:5px') + "OpenMindMap", '/', :class => 'brand'
+          = link_to image_tag('logo_small.png', :boreder => 0, :size => '160x56', :style => 'padding-right:5px'), '/', :class => 'brand'
           - if user_signed_in?
             %ul.nav
               %li= link_to "Public maps", maps_public_path
