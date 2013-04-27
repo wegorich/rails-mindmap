@@ -1,0 +1,361 @@
+.main.issues {
+
+  @include outer-container;
+
+  .row {
+    @include row(block);
+    margin-bottom: 1em;
+  }
+  section.issue {
+    @include span-columns(9);
+    .thumb {
+      width: 110px;
+      border: 1px solid #ddd;
+      padding: 5px;
+      img {
+        width: 100px;
+      }
+    }
+  }
+  section.tools {
+    @include span-columns(3);
+    ul {
+      list-style: none;
+      li {
+        text-align: right;
+      }
+    }
+  }
+  .list-page-nav {
+    padding: 0;
+    h2 {
+      padding: $main-padding;
+      padding-bottom: 0;
+    }
+  }
+  .solutions_wrapper {
+    section.solutions {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 3px dashed #eee;
+      @include span-columns(9);
+    }
+    section.filter {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 3px dashed #eee;
+      @include span-columns(3);
+      ul {
+        list-style: none;
+        li {
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+section.refinements {
+  .refinement {
+    border-bottom: 1px dashed #000;
+    padding-bottom: 24px;
+    padding-top: 24px;
+    .toggle_reply_form {
+      margin-top: 12px;
+      color: #34bf5c;
+      border-radius: 12px;
+      padding: 4px 12px;
+      display: inline-block;
+      line-height: 1em;
+      text-decoration: none;
+      border: 1px solid #ccf6d8;
+    }
+    .timeago {
+      display: block;
+      color: #819d89;
+      font-size: .8em;
+    }
+    label {
+      margin-left: 16px;
+    }
+    @include outer-container;
+    .clarification_holder {
+      @include span-columns(11);
+      .clarification {
+        background: #ebebeb;
+        border-radius: 12px;
+        padding: 12px 16px;
+      }
+    }
+    .row {
+      @include row(block);
+    }
+    .reply_holder {
+      @include span-columns(11);
+      @include shift(1);
+      .reply {
+        background: #ccf6d8;
+        border-radius: 12px;
+        padding: 12px 16px;
+      }
+    }
+    .new_reply_form {
+      @include shift(1);
+      @include span-columns(11);
+      display: none;
+      .fields {
+        textarea {
+          padding: 5px;
+          border-radius: 5px;
+          height: 40px;
+        }
+        background: #ccf6d8;
+        border-radius: 12px;
+        padding: 12px 16px;
+      }
+    }
+  }
+  .new_refinement_form {
+    padding-top: 24px;
+    @include shift(1);
+    @include span-columns(11);
+
+    legend {
+      margin-left: 16px;
+    }
+    form {
+      textarea {
+        height: 140px;
+      }
+      background: #ebebeb;
+      border-radius: 12px;
+      padding: 12px 16px;
+    }
+  }
+}
+
+section.solutions {
+  form.new_solution {
+    legend {
+      background: #ebebeb;
+      color: #000;
+      padding: 0 12px;
+      display: inline-block;
+      margin-right: .6em;
+      margin-bottom: 1em;
+    }
+    width: 520px;
+    padding: 10px;
+    display: none;
+    .select2 {
+      width: 500px;
+      input {
+        padding: 0;
+        margin-top: 5px;
+        margin-left: 5px;
+      }
+    }
+    .wysihtml5 {
+      width: 500px;
+    }
+    textarea {
+      width: 500px;
+    }
+    a.submit {
+      display: inline-block;
+      margin-top: 12px;
+      text-decoration: underline;
+      font-size: 1.2em;
+    }
+  }
+  .solution {
+    border-bottom: 1px solid #eee;
+    padding: 12px;
+    label {
+      background: #ebebeb;
+      color: #000;
+      padding: 0 12px;
+      display: inline-block;
+      margin-right: .6em;
+    }
+    margin-bottom: 1em;
+    .timeago {
+      font-size: .8em;
+    }
+    section.issue_comments {
+      margin-left: 2em;
+
+      .comment {
+        border-left: 2px solid #ccc;
+
+        background: #fbfbfb;
+        margin: 0 0 1px 0;
+        padding-left: .5em;
+        &:hover {
+          background: #ebebeb;
+        }
+      }
+      .new_comment_link {
+
+        border-left: 2px solid #ccc;
+
+        background: #fbfbfb;
+        margin: 0 0 1px 0;
+        padding-left: .5em;
+        a {
+          display: inline-block;
+          line-height: 1em;
+          text-decoration: none;
+          border-bottom: 1px dashed;
+        }
+      }
+      form.new_comment {
+        border-left: 2px solid #000;
+        margin-top: 10px;
+        margin: 3px 0 1px 0;
+        display: none;
+        padding-left: .5em;
+        padding-top: .5em;
+        textarea {
+          padding: 5px;
+          border-radius: 5px;
+          height: 40px;
+        }
+      }
+    }
+    section.issue_ingredients {
+      margin-top: .5em;
+      a {
+        display: inline-block;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        text-decoration: none;
+        padding: 0 5px;
+      }
+    }
+  }
+}
+
+section.solutions, section.refinements {
+  form {
+    textarea {
+      width: 100%;
+      border: 1px solid #ddd;
+      margin-top: -2px;
+    }
+  }
+}
+
+form.edit_issue, form.new_issue {
+
+  section.main {
+
+    .actions {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #ddd;
+    }
+    .select2 {
+      width: 100%;
+      input {
+        padding: 0;
+        margin-top: 5px;
+        margin-left: 5px;
+      }
+    }
+    .string {
+      input[type="text"], textarea {
+        border-radius: 2px;
+        font-size: 1em;
+        width: 100%;
+        padding: .4em;
+        border: 1px solid #ccc;
+        font-family: $verdana;
+      }
+    }
+    textarea {
+      font-size: .9em;
+      height: 18em;
+    }
+  }
+}
+
+.issue {
+  position: relative;
+  padding: $main-margin * 1.5 0 0 0;
+  margin-top: $main-margin * 1.5;
+  border-top: $base-border;
+  &:first-child {
+    border-top: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  &:last-child .content {
+    border-bottom: none;
+  }
+  .descr {
+    color: $sub-gray;
+    font-size: 12px;
+    line-height: 1;
+    margin-bottom: $main-margin;
+    a {
+      color: $black;
+    }
+  }
+  .title{
+    margin-bottom: .2em;
+  }
+  .content {
+    .title a{
+      font-weight: normal;
+      color: #444;
+    }
+  }
+  .sub {
+    margin-top: $main-margin;
+    i {
+      color: $icon-blue;
+    }
+    a, span {
+      font-size: 12px;
+    }
+    span{
+      color: $sub-gray
+    }
+    .list li:first-child {
+      padding-left: 0;
+    }
+  }
+}
+.issues-same{
+  h3, ul{
+    padding: 0 $main-padding;
+  }
+  > ul{
+    display: block;
+    border-top: $base-border;
+    margin-top: $main-margin/2;
+    padding-top: $main-margin;
+    @include clearfix;
+  }
+  li{
+    margin-top: 0;
+    padding-top: 0;
+    padding-right: $main-padding + $layout-margin;
+    border: 0;
+    float: left;
+    width: 33.333%;
+    .s-icon-padding{
+      margin-left: $solution-icon-height + $main-padding;
+    }
+    .rate{
+      font-size: 1.1em;
+    }
+    a{
+      color:$black;
+      i{
+        color:$gray;
+      }
+    }
+  }
+}

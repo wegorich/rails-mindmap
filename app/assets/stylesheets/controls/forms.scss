@@ -1,0 +1,51 @@
+.simple_form {
+  $font-size: 14px;
+  font-size: $font-size;
+  $margin: 12px;
+  h1 {
+    font-size: 1.8em;
+    margin-bottom: $layout-margin;
+    a{
+      margin-left: $modal-padding;
+      font-weight: normal;
+    }
+  }
+  a {
+    font-size: $font-size;
+  }
+  .input {
+    label {
+      display: block;
+      padding-bottom: $main-margin/3;
+      abbr {
+        color: #f69556;
+      }
+    }
+    margin-top: $main-margin;
+    :first-child {
+      margin-top: 0;
+    }
+  }
+  .center {
+    margin-top: $main-margin;
+    text-align: center;
+    input {
+      margin-bottom: $layout-margin;
+    }
+    p {
+      max-width: $input-width - $header-line-height;
+      margin: auto;
+    }
+  }
+  .field_with_errors {
+    position: relative;
+    input {
+      border: $border-width solid #f69556;
+    }
+    span.error {
+      display: block;
+      color: #f69556;
+      font-size: .8em;
+    }
+  }
+}

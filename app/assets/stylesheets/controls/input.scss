@@ -1,0 +1,136 @@
+#{$all-text-inputs}, textarea, .select2-container-multi .select2-choices {
+  position: relative;
+  width: 100%;
+  font-weight: normal;
+  height: $input-height;
+  padding: $input-padding;
+  font-size: 14px;
+  border: $base-border;
+  background-color: white;
+  border-radius: $input-border-radius;
+  &:focus {
+    border-color: dodgerblue;
+    z-index: 100 !important;
+    @include transition (all 0.3s ease-in-out);
+  }
+}
+
+textarea {
+  resize: none;
+  line-height: 1;
+  height: $header-height;
+  padding: $main-padding;
+}
+
+.wysihtml5 {
+  .toolbar {
+    border-width:0px;
+    border-top-width:1px;
+    display: block !important;
+  }
+  .input {
+    margin: 0 -1px;
+    textarea {
+      display: block;
+    }
+  }
+}
+
+.input-dock {
+  position: relative;
+  width: 100%;
+  $margin: $header-line-height + $input-text-padding;
+  margin-top: $margin;
+  & > * {
+    position: absolute;
+    left: -$main-padding;
+    right: -$main-padding;
+    bottom: -$main-padding;
+  }
+  &.top {
+    margin-bottom: $margin;
+    & > * {
+      bottom: auto;
+      top: -$main-padding;
+    }
+  }
+}
+
+.input-btn {
+  position: relative;
+  .input {
+    input {
+      padding-right: 18%;
+      z-index: 102;
+    }
+  }
+  .btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 101;
+  }
+}
+
+.select2 {
+  width: 100%;
+  display: block;
+  .select2-choices {
+    display: block;
+    box-shadow: none !important;
+
+    .select2-search-field input {
+      padding: 0 6px;
+      margin: 0;
+      &.select2-active {
+        background-color: transparent !important;
+      }
+    }
+
+    .select2-search-choice {
+      border: 0;
+      box-shadow: none;
+      background: none !important;
+      line-height: $header-line-height;
+      margin: 0;
+      padding: 0 $main-margin 0 $main-margin/2;
+    }
+  }
+  .select2-search-choice-close {
+    color: #54a7ed !important;
+    right: 0;
+    left: auto;
+    top: $main-margin;
+    background: none !important;
+    font-size: 12px;
+    &:hover {
+      color: #ec6e46 !important;
+    }
+    &:after {
+      content: 'x';
+      position: absolute;
+      line-height: $main-margin;
+      margin-left: $border-width*2;
+    }
+  }
+
+}
+
+.select2-drop {
+  border-radius: 0;
+  border:none;
+  .select2-results {
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    border: $border-width solid dodgerblue;
+    .select2-result-label, .select2-searching {
+      padding: 0 $modal-padding;
+      line-height: $header-line-height - $border-width*2;
+    }
+    .select2-highlighted, .select2-searching {
+      background: #54a7ed;
+      color: white;
+    }
+  }
+}

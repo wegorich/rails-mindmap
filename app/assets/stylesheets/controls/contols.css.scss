@@ -1,0 +1,30 @@
+@import "../layout/values";
+@import "lists";
+@import "search";
+@import "dropdown";
+@import "button";
+@import "meter";
+@import "modal";
+@import "forms";
+@import "loader";
+@import "comment";
+@import "input";
+@import "input-btn";
+@import "solution";
+@import "pagination";
+@import "tabs";
+@import "file_upload";
+@import "tag";
+@import "rate";
+
+.r {
+  float: right;
+}
+
+.l {
+  float: left;
+}
+
+:focus {
+  outline: none;
+}

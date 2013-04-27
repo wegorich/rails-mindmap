@@ -1,0 +1,18 @@
+.meter {
+  position: relative;
+  .num,&.num {
+    $size: $main-margin;
+    position: absolute;
+    font-size: $size;
+    line-height: $size/2;
+    border-radius: 50%;
+    padding: $size/2;
+    right: -$size/3*2;
+    top: -$size/3*2;
+    background: brown;
+    color: white;
+  }
+  &.num{
+    position: inherit;
+  }
+}

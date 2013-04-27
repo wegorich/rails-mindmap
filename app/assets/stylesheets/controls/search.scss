@@ -1,0 +1,31 @@
+.search {
+  $submit-font-size: 20px;
+  position: relative;
+  @include inline-block;
+
+  input[type='text'] {
+    padding: 0 ($input-height + $input-border-radius/2) 0 $main-padding;
+    &:focus {
+      z-index: 0 !important;
+    }
+  }
+
+  .submit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0 $input-border-radius 0 0;
+    width: $input-height;
+    font-size: 1.4em;
+    height: $input-height;
+    line-height: $input-height;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: $gray;
+    i{
+      line-height: 1;
+      width: auto;
+    }
+  }
+}

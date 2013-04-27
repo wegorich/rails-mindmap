@@ -1,0 +1,24 @@
+.solution {
+  & > .heading .full-descr {
+    border-bottom: $base-border;
+  }
+  .full-descr{
+    padding: 20px;
+    margin: 0 0 2px;
+  }
+  & > .body{
+    padding: $main-margin $modal-padding;
+  }
+  .comment{
+    margin-left: $header-line-height;
+    & > .heading .full-descr {
+      border-top: $base-border;
+      & > .rate{
+        color: transparent;
+      }
+    }
+    & > .body{
+      margin: $main-padding 0;
+    }
+  }
+}

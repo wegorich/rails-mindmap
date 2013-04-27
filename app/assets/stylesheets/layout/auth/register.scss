@@ -1,0 +1,120 @@
+form#new_user {
+  .separator {
+    $padding: 11px;
+    border-bottom: 1px solid #444444;
+    position: relative;
+    margin: $layout-margin 0;
+    .text {
+      position: absolute;
+      display: inline;
+      padding: 0 $padding/2;
+      top: -11px;
+      left: 50%;
+      background: #ffffff;
+      margin-left: -11px;
+    }
+  }
+  section {
+    .list.inline li {
+      padding: 0;
+    }
+    .dropdown-menu {
+      left: -69%;
+      top: -106px;
+      li a {
+        line-height: $header-line-height;
+        padding: 0 $modal-padding;
+        border: none;
+        color: #999;
+      }
+
+    }
+  }
+}
+
+.providers.list.inline {
+  @include clearfix;
+  margin-bottom: $main-margin;
+  &> li {
+    padding: 0 2px;
+    display: block;
+    float: left;
+  }
+}
+
+.ribbon {
+  background: $semi-greem;
+  border-top: $base-border;
+  margin-bottom: $main-padding;
+  .wrapper {
+    padding: 0;
+    margin-top: -1px;
+    background: $base-background-color;
+    .auth {
+      position: relative;
+      margin: $main-padding (-$main-padding) (-$main-padding);
+      box-shadow: inset 0 2px 0 -1px $border-color;
+      &:before, &:after {
+        position: absolute;
+        bottom: 100%;
+        content: ' ';
+      }
+      &:before {
+        @include triangle($main-padding, $dark-green, down-left);
+        right: 0;
+
+      }
+      &:after {
+        @include triangle($main-padding, $dark-green, down-right);
+        left: 0;
+      }
+    }
+
+  }
+
+}
+
+.auth {
+  background: $light-green;
+  font-size: 0;
+  color: $dark-green;
+  .block {
+    @include inline-block;
+    vertical-align: middle;
+    font-size: $font-size;
+    width: 50%;
+    padding: $auth-padding;
+    border-right: $border-width dashed $border-color;
+    &:last-child {
+      border-right: 0;
+    }
+    form {
+      margin-top: -24px;
+    }
+  }
+  .attach-group {
+    margin-top: $main-margin;
+    .btn {
+      float: right;
+    }
+  }
+  p {
+    margin-bottom: $main-margin;
+  }
+  .input input {
+    border-radius: 0;
+    height: $button-height;
+    padding-left: $input-text-padding;
+    @include placeholder {
+      font-style: italic;
+    }
+  }
+  .sing-in {
+    color: $dark-green;
+    text-decoration: underline;
+    i{
+      font-size: 1.2em;
+      text-decoration: none;
+    }
+  }
+}

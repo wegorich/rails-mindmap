@@ -1,0 +1,28 @@
+%h2
+  Edit #{resource_name.to_s.humanize}
+- if resource.authorizations.size == 0
+  = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'well form-horizontal' }) do |f|
+    = devise_error_messages!
+    %fieldset
+      .control-group
+        = f.label :password, :class => 'control-label'
+        .controls
+          = f.password_field :password, :class => 'input-xlarge'
+          %p.help-block Leave blank if you don't want to change it
+      .control-group
+        = f.label :password_confirmation, :class => 'control-label'
+        .controls
+          = f.password_field :password_confirmation, :class => 'input-xlarge'
+      .control-group
+        = f.label :current_password, :class => 'control-label'
+        .controls
+          = f.password_field :current_password, :class => 'input-xlarge'
+          %p.help-block We need your current password to confirm your changes
+      .controls
+        = f.submit "Update", :class => 'input-xlarge'
+- else
+  Login to #{resource.authorizations.first.provider} to change your profile informations.
+%h3 Cancel my account
+%p
+  Unhappy? #{link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete}.
+= link_to "Back", :back

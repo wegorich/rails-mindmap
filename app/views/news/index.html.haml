@@ -1,0 +1,9 @@
+%h1 Last OpenMindMap news
+.hero-unit
+  - @news.each do |news|
+    %h2= news.title
+    %h3
+      = news.created_at
+      by #{news.user.email}
+    %p
+      = news.content

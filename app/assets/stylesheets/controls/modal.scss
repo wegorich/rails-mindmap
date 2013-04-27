@@ -1,0 +1,23 @@
+.modal {
+  margin: auto;
+
+  .fancybox-skin {
+    background: white;
+    padding: $modal-padding !important;
+    border-radius: 0;
+    input {
+      height: $header-line-height;
+      min-width: $input-width;
+      width: 100%;
+    }
+    .btn{
+      padding: 0;
+    }
+    a {
+      text-decoration: underline;
+    }
+    .btn-close{
+      color: #444444;
+    }
+  }
+}

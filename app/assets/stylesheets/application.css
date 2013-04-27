@@ -9,7 +9,11 @@
 *= require bootstrap.min
 *= require attachments
 *= require omm
+*= require layout/layout
 */
+:focus{
+    outline: none;
+}
 .context-menu-item.menu-icon-wiki{background-image:url(/assets/wiki_small.png);}
 .context-menu-item.menu-icon-question{background-image:url(/assets/question_small.png);}
 .context-menu-item.menu-icon-classic{background-image:url(/assets/classic_small.png);}

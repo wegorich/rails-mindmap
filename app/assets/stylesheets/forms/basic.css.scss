@@ -1,0 +1,79 @@
+.aside_form{
+  legend{
+    margin-left: 60px;
+  }
+  label{
+    font-weight: bold;
+    display: inline-block;
+    width: 60px;
+    text-align: right;
+  }
+  input[type="submit"]{
+    margin-top: 5px;
+    margin-left: 65px;
+  }
+}
+.basic_form{
+  .field{
+    display: block;
+    clear: both;
+  }
+  $label_width: 15em;
+  $input_width: 40em;
+  legend{
+    margin-left: $label_width;
+    padding: .8em 0;
+  }
+  label{
+    padding-right: .4em;
+    text-align: right;
+    width: $label_width;
+    display: block;
+    float: left;
+    padding-top: .4em;
+    clear: left;
+  }
+  input[type='text'], textarea{
+    width: $input_width;
+    border-radius: .2em;
+    border: 1px solid #ddd;
+    padding: .6em;
+    clear: both;
+  }
+  input[type='submit']{
+    clear: both;
+    margin-top: .4em;
+    margin-left: $label_width;
+    background: #fff;
+  }
+  // Fields like radio buttons, etc, with label
+  .not_input_field{
+    line-height: 2.5em;
+  }
+  .one-line{
+    display: block;
+    clear: both;
+    margin-left: $label_width;
+    margin-top: 1em;
+    label{
+      display: inline-block;
+      float: none;
+      width: auto;
+    }
+  }
+  input.small{
+    width: $input_width/4;
+  }
+  input.medium{
+    width: $input_width/2;
+  }
+  fieldset{
+    margin-bottom: .5em;
+    border: 1px dotted #eee;
+  }
+  .select2{
+    border-radius: .2em;
+    border: 1px solid #eee;
+    width: 34em;
+  }
+}

@@ -1,0 +1,51 @@
+%button#btn-toggle-hud.btn.btn-inverse.btn-mini{"data-toggle" => "button"}
+  %i.icon-resize-small.icon-white
+#node-window.hud
+  #node-hud
+    .input-prepend
+      %span.add-on
+        %i.icon-pencil
+      %input#node-title.span2{:type => "text"}/
+    .input-prepend
+      %span.add-on
+        %i.icon-tint
+      %input#node-color.span2{:type => "text"}/
+    .input-prepend
+      %span.add-on
+        %i.icon-font
+      %select#node-font.span2
+    .input-prepend
+      %a#node-link.btn.btn-inverse.btn-mini{:href => "#", :target => "_blank"}
+        %i.icon-white.icon-magnet
+        Open node link
+    .btn-group
+      %button#btn-bold.btn.btn-inverse.btn-mini{"data-toggle" => "button"}
+        %i.icon-bold.icon-white
+      %button#btn-italic.btn.btn-inverse.btn-mini{"data-toggle" => "button"}
+        %i.icon-italic.icon-white
+      %button#btn-lock.btn.btn-inverse.btn-mini{"data-toggle" => "button"}
+        %i.icon-white.icon-move
+      %button#btn-fold.btn.btn-inverse.btn-mini{"data-toggle" => "button"}
+        %i.icon-plus.icon-white
+      %button#btn-remove.btn.btn-danger.btn-mini
+        %i.icon-remove.icon-white
+    .hud-wiki
+      %label
+        Wiki page
+      #hud-wiki-content
+      .btn-group
+        %button#btn-hud-wiki-show.btn.btn-success Show
+        %button#btn-hud-wiki-edit.btn.btn-primary Edit
+  #map-hud
+    Background color
+    .input-prepend
+      %span.add-on
+        %i.icon-tint
+      %input#map-background-color.span2{:type => "text"}/
+    .btn-group
+      %button#btn-share.btn.btn-inverse.btn-mini{"data-toggle" => "button"}
+        %i.icon-white.icon-eye-open
+        Map is
+        %span public
+      %button#btn-fold.btn.btn-inverse.btn-mini{"data-toggle" => "button"}
+        %i.icon-plus.icon-white

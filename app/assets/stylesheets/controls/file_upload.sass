@@ -1,0 +1,77 @@
+$border: $border-width solid #ebebeb
+.file-uploader
+  position: relative
+  margin-bottom: $main-margin/2!important
+  .load
+    z-index: 1 !important
+
+#dropzone
+  color: #444
+  position: relative
+  width: 100%
+  height: $header-line-height
+  padding: $main-margin $main-padding
+  line-height: 1
+  border-bottom: $border
+  .on-hover, .on-out, .data
+    display: none
+  .descr
+    font-size: $input-text-padding
+    color: #999
+  .default, .data
+    z-index: 200
+  .data
+    line-height: $header-line-height
+    .icon-spinner
+      font-size: $modal-padding
+      line-height: $header-line-height
+      color: dodgerblue
+
+  &.files
+    padding: 0 $main-padding
+    .default
+      display: none
+    .data
+      display: block
+  &.in
+    @include box-shadow(0 2px 5px #ddd)
+    position: absolute
+    vertical-align: middle
+    text-align: center
+    width: 100%
+    left: 0
+    top: 0
+    z-index: 1
+    height: $header-height + $input-text-padding
+    line-height: $header-height + $input-text-padding
+    border: $border
+    background: white
+
+    .on-out
+      display: block
+      position: absolute
+      top: $input-text-padding
+      left: $input-text-padding
+      right: $input-text-padding
+      bottom: $input-text-padding
+      line-height: $header-height - $input-text-padding
+      border: $border-width dashed dodgerblue
+
+    .default, .data
+      display: none
+
+    .on-drag
+      display: block
+      z-index: 200
+
+  &.in.hover
+    border-color: dodgerblue
+    padding: 0
+    @include transition (all 0.3s ease-out)
+    .on-out
+      display: none
+    .on-hover
+      text-color: #444
+      display: block
+
+

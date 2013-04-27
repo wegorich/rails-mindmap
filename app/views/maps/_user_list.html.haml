@@ -1,0 +1,5 @@
+%ul#list-of-collaborators
+  - for user in map.users
+    %li
+      = user.email
+      = link_to 'Revoke', map_contact_path(map, user), :remote => true, :method => :delete, :confirm => "Are you sure?"

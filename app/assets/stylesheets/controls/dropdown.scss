@@ -1,0 +1,138 @@
+.dropdown {
+  position: relative;
+  &.open {
+    .icon-caret-down:before {
+      content: "\f0d8";
+    }
+  }
+  .pull-right > .dropdown-menu {
+    right: 0;
+    left: auto;
+  }
+
+  .dropdown-menu {
+    behavior: url(/assets/PIE.htc);
+    text-align: left;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    min-width: 160px;
+    margin: 2px 0 0;
+
+    list-style: none;
+    background-color: #ffffff;
+    border: $base-border;
+
+    @include box-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+
+    & > .active {
+      background: #fbfddf;
+    }
+
+    & > .disabled {
+      color: $sub-gray;
+      :hover, :focus {
+        color: $sub-gray;
+        text-decoration: none;
+        cursor: default;
+        background-color: transparent;
+        background-image: none;
+      }
+    }
+
+    &> li > a{
+      display: block;
+      padding: 5px 15px;
+      &:hover, &:focus {
+        text-shadow: none;
+        color: #657b83;
+        background: #fef9ec;
+      }
+    }
+
+    .divider {
+      height: 1px;
+      margin: 5px 0;
+      overflow: hidden;
+      background-color: $border-color;
+      border-bottom: $base-border;
+      padding: 0;
+    }
+  }
+
+  .dropdown-menu.up:before {
+    $width: 24px;
+    @include triangle($width, $border-color, up);
+    content: '';
+    position: absolute;
+    top: -$width;
+    left: 50%;
+    margin-left: -$width/2;
+
+  }
+
+  .dropdown-container {
+    max-height: 450px;
+    overflow-y: scroll;
+    position: initial;
+    display: block;
+    border: none;
+    margin: 0;
+  }
+  .footer {
+    border-top: $base-border;
+    padding: 5px 10px;
+    i {
+      color: $sub-gray;
+    }
+  }
+}
+
+.open {
+  *z-index: 1000;
+  & > .dropdown-menu {
+    display: block;
+  }
+}
+
+.aside-item .attach {
+  .dropdown-menu {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    li {
+      .btn{
+        display: block;
+        font-size: 13px;
+      }
+      padding: 0;
+    }
+  }
+}
+.aside-item.subscribe{
+  .active {
+    display: none;
+    text-align: left;
+    i{
+      margin-right: $main-margin;
+      font-size: $header-line-height;
+      color: #ed7148;
+      font-weight: lighter;
+      float:left;
+    }
+  }
+  &.active{
+    & > p{
+      display: none;
+    }
+    .active{
+      display: block;
+    }
+  }
+}

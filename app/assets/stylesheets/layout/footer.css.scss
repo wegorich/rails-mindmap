@@ -1,0 +1,14 @@
+@import 'values';
+
+footer.page {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  line-height: $footer-height;
+  a, & {
+    color: $gray;
+  }
+  .wrapper > * {
+    border-top: $base-border;
+  }
+}

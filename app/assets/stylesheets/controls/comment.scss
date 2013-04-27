@@ -1,0 +1,58 @@
+.comment {
+  margin-top: $main-padding*2;
+  a {
+    text-decoration: underline;
+  }
+  &.my > .heading a{
+    color: #ec6f46;
+  }
+  .detele {
+     color: #e71414;
+  }
+  .comment {
+    margin-top: $main-padding;
+  }
+  .body {
+    display: block;
+    @include clearfix;
+    word-wrap: break-word;
+    .comment {
+      margin-top: $main-padding;
+      &:before {
+        float: left;
+        content: ' ';
+        display: block;
+        $width: $header-line-height - $input-text-padding*2;
+        width: $width;
+        height: $width;
+        margin: (-$input-text-padding) $input-text-padding $input-text-padding;
+        $border: $border-width solid #d7d7d7;
+        border: {
+          left: $border;
+          bottom: $border;
+        }
+        ;
+      }
+    }
+
+  }
+
+  .heading {
+    font-size: 12px;
+  }
+
+}
+
+.comment-list {
+  margin-left: 0;
+  list-style: none;
+}
+
+.issue_comments {
+  .list.inline{
+    margin-left: $main-padding;
+  }
+  .input-dock {
+    margin-bottom: $main-padding;
+  }
+}

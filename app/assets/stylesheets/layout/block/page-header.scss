@@ -1,0 +1,43 @@
+section.page-header{
+  @include outer-container;
+  margin: 1em auto;
+  section.breadcrumb{
+    @include span-columns(6);
+    @include media($mobile) {
+      display: none;
+    }
+  }
+  section.search-bar{
+    @include span-columns(6);
+
+    form{
+      float: right;
+      input[type="text"]{
+        border: 1px solid #ddd;
+        font-size: .9em;
+        padding: .4em .9em;
+        width: 300px;
+        float: left;
+        height: 41px;
+        margin-right: 5px;
+        border-radius: 2px;
+      }
+      input[type="image"]{
+        float: right;
+      }
+    }
+
+    // Mobile
+    @include media($mobile) {
+      @include span-columns(4);
+      form{
+        float: none;
+        padding: 1em;
+      }
+      input{
+        float: none;
+      }
+    }
+
+  }
+}

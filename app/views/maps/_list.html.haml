@@ -1,0 +1,15 @@
+- if @maps.empty?
+  Ops! You don't have a maps yet! #{link_to 'Let\'s start with the first!', new_map_path}
+- else
+  %table.table.table-striped.table-condensed
+    %thead
+      %tr
+        %th Title
+        %th Owner
+        %th Last modified
+        %th Actions
+    - @maps.each do |map|
+      = render "map", :map => map
+    - @shared_maps.each do |map|
+      = render "map", :map => map
+  = link_to 'New Map >>', new_map_path, :class => "btn btn-primary btn-large"

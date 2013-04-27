@@ -1,0 +1,22 @@
+.page-header
+  %h1 Bugs report
+%table.table
+  %tr
+    %th Title
+    %th Content
+    %th User
+    %th Status
+    %th
+    %th
+    %th
+  - @bugs.each do |bug|
+    %tr
+      %td= bug.title
+      %td= bug.content
+      %td= bug.user_id
+      %td= bug.status_id
+      %td= link_to 'Show', bug
+      %td= link_to 'Edit', edit_bug_path(bug)
+      %td= link_to 'Destroy', bug, confirm: 'Are you sure?', method: :delete
+%br/
+= link_to 'Bug report', new_bug_path, class: 'btn btn-success'

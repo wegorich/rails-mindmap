@@ -1,0 +1,53 @@
+#placeHolder{:style => "display:none; position:absolute;"}
+  %textarea#inputBox{:style => "background-color:transparen"}
+#wiki.curtain.boxed.hide
+#clipart.curtain.boxed.hide
+  %button.btn{:onclick => "toggleClipartLibrary()"} Close
+  %ul.thumbnails
+#backgounds.curtain.boxed.hide
+  %button.btn{:onclick => "toggleBackgroundLibrary()"} Close
+  %button.btn{:onclick => "resetBackgroundImage()"} Remove background
+  %ul.thumbnails
+#attachment-modal.modal.hide.fade
+  .modal-header
+    %a.close{"data-dismiss" => "modal", :href => "#"} &times;
+    %h3#attachment_title
+  .modal-body
+    %p
+  .modal-footer
+    %a.btn.close{"data-dismiss" => "modal", :href => "#"} Close
+#youtube-modal.modal.hide.fade
+  .modal-header
+    %a.close{"data-dismiss" => "modal", :href => "#"} &times;
+    %h3 Search for YouTube video
+  .modal-body
+    %p
+      %label{:for => "yt-query"} Terms
+      %input#yt-query.search{:name => "yt-query", :type => "text"}/
+    %input#guid{:type => "hidden"}/
+  .modal-footer
+    %a.btn.close{"data-dismiss" => "modal", :href => "#"} Confirm
+#colorpickerHolder{:style => "position: absolute;"}
+- if @map.id
+  #versioning-modal.modal.hide.fade
+    .modal-header
+      %a.close{"data-dismiss" => "modal", :href => "#"} &times;
+      %h3 Map versioning
+    .modal-body
+      %p
+    .modal-footer
+      %a.btn.close{"data-dismiss" => "modal", :href => "#"} Cancel
+  #invite-user-modal.modal.hide.fade
+    .modal-header
+      %a.close{"data-dismiss" => "modal", :href => "#"} &times;
+      %h3 Share map with user
+    .modal-body
+      %p
+        = form_for @map, :remote => true do |f|
+          = f.fields_for :users do |user_form|
+            = user_form.autocomplete_field :user_email, autocomplete_user_email_contacts_path
+          = f.submit 'Add collaborator'
+      %h4 List of current collaborators
+      #list-of-users= render :partial => "user", :locals => { :map => @map }
+    .modal-footer
+      %a.btn.close{"data-dismiss" => "modal", :href => "#"} Close

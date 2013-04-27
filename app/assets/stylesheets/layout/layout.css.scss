@@ -1,0 +1,170 @@
+@import "bourbon";
+@import "neat";
+$mobile: new-breakpoint(max-width 480px 4);
+$tablet: new-breakpoint(max-width 768px 8);
+
+@import "../controls/contols";
+@import "header";
+@import "footer";
+@import "full-form";
+
+@import "../forms/basic";
+
+@import "../font-awesome";
+
+@import "../issues";
+@import 'values';
+@import 'auth/register';
+@import 'block/block';
+
+$max-width: 1160px;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.wrapper {
+  @include outer-container;
+  padding: 0 $main-padding;
+}
+
+h1, h2, h3, h4 {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 1.6em;
+}
+
+body {
+  background: $base-background-color;
+  font-family: $helvetica;
+  font-weight: 400;
+  font-size: $font-size;
+  line-height: 22px;
+  min-width: 1024px;
+  color: $black;
+}
+
+img {
+  color: transparent;
+}
+
+html, body {
+  height: 100%;
+}
+
+.wrap {
+  min-height: 100%;
+  position: relative;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+a {
+  cursor: pointer;
+  color: #4a8ad9;
+  @include transition(all .4s ease-in-out);
+  text-decoration: none;
+  &:hover {
+    color: darken(#3589A7, 5);
+    text-decoration: underline;
+    i {
+      text-decoration: none;
+    }
+  }
+}
+.sub-gray{
+  color: $sub-gray;
+}
+.no-paddin {
+  margin: -20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  small, .small {
+    font-size: .8em;
+    color: #666;
+    font-weight: normal;
+  }
+}
+
+.main {
+  padding: $main-padding $main-padding $footer-height+ $layout-margin * 1.6;
+  @include outer-container;
+
+  .main-content {
+    width: 70%;
+    float: left;
+    background: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.control-panel {
+  padding: 0 !important;
+  background: none !important;
+  margin-top: $input-text-padding !important;
+  .simple_form .input {
+    margin: 0;
+  }
+  .tabs .content .wysihtml5 {
+    margin-bottom: -7px;
+  }
+}
+
+.notification {
+  position: relative;
+  $margin-img: 10px;
+  padding: $margin-img;
+  $img-size: 30px;
+  padding-left: $img-size + $margin-img*2;
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;;
+    max-width: $img-size;
+    max-height: $img-size;
+    margin: $margin-img;
+  }
+  .date {
+    font-size: 12px;
+    color: #adadad;
+  }
+}
+
+.s-icon-padding {
+  margin-left: $solution-icon-height+$layout-margin;
+}
+
+.solution-icon {
+  position: absolute;
+  width: $solution-icon-height;
+  min-height: $solution-icon-height;
+  left: 0;
+  background: image-url("icons/solutions.png") no-repeat;
+  background-position: 0 -56px;
+  &.on {
+    background-position: 0 0;
+    text-align: center;
+    line-height: $solution-icon-line-height;
+    font-size: 18px;
+    .descr {
+      position: absolute;
+      color: $black;
+      width: $solution-icon-height;
+      top: 100%;
+      margin-top: $main-margin;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1;
+    }
+  }
+}

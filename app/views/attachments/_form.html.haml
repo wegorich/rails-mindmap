@@ -1,0 +1,121 @@
+.page-header
+  %h3= @title || @map.title
+%div{:style => "width:100%"}
+  = form_for [@map, @attachment] do |f|
+    .row
+      .span9
+        = f.submit "Save page", :class => 'btn success'
+        = link_to_function "Back to map", "backToMap(#{@map.id})", :class => 'btn primary'
+        = link_to_function "Live preview", "$('#preview').fadeToggle()", :class => 'btn'
+        = link_to_function "Show map", "$('#mappreview').fadeToggle()", :class => 'btn'
+        = link_to_function "Cheatsheet", "$('#markdown').fadeToggle()", :class => 'btn'
+      #wmd-button-bar.span7
+    = f.text_area :content,                                                                |
+      :value 	=> @attachment.content || 'Insert here your wiki text with markdown syntax', |
+      :id 	=> 'wmd-input',                                                                 |
+      :style 	=> 'width:100%'                                                              |
+    = f.hidden_field :kind, :value => 'wiki'
+    = f.hidden_field :node_uuid, :value => @node_uuid
+#mappreview.boxed.hide.mappreview
+  %h3= @map.title
+  %img{:src => "data:image/svg+xml;charset=utf-8;base64,#{ActiveSupport::Base64.encode64(@map.svgdata.to_s)}", :style => "width:100%;height:100%"}/
+#preview.hide
+  %h3
+    = @title || @map.title
+    (preview)
+  #wmd-preview{:style => "background:white"}
+#markdown.boxed.hide.mappreview{:style => "max-height:70%;overflow:auto"}
+  %h3 Markdown cheatsheet
+  %pre
+    :preserve
+      
+      	# Header 1 #
+      ## Header 2 ##
+      ### Header 3 ###             (Hashes on right are optional)
+      #### Header 4 ####
+      ##### Header 5 #####
+      
+      ## Markdown plus h2 with a custom ID ##         {#id-goes-here}
+      [Link back to H2](#id-goes-here)
+      
+      This is a paragraph, which is text surrounded by whitespace. Paragraphs can be on one 
+      line (or many), and can drone on for hours.  
+      
+      Here is a Markdown link to [Warped](http://warpedvisions.org), and a literal . 
+      Now some SimpleLinks, like one to [google] (automagically links to are-you-
+      feeling-lucky), a [wiki: test] link to a Wikipedia page, and a link to 
+      [foldoc: CPU]s at foldoc.  
+      
+      Now some inline markup like _italics_,  **bold**, and `code()`. Note that underscores in 
+      words are ignored in Markdown Extra.
+      
+      ![picture alt](/images/photo.jpeg "Title is optional")     
+      
+      > Blockquotes are like quoted text in email replies
+      >> And, they can be nested
+      
+      * Bullet lists are easy too
+      - Another one
+      + Another one
+      
+      1. A numbered list
+      2. Which is numbered
+      3. With periods and a space
+      
+      And now some code:
+      
+          // Code is just text indented a bit
+          which(is_easy) to_remember();
+      
+      ~~~
+      
+      // Markdown extra adds un-indented code blocks too
+      
+      if (this_is_more_code == true && !indented) {
+          // tild wrapped code blocks, also not indented
+      }
+      
+      ~~~
+      
+      Text with  
+      two trailing spaces  
+      (on the right)  
+      can be used  
+      for things like poems  
+      
+      ### Horizontal rules
+      
+      * * * *
+      ****
+      --------------------------
+      
+      
+  .custom-class{:markdown => "1"}
+    This is a div wrapping some Markdown plus.  Without the DIV attribute, it ignores the
+    block.
+  \## Markdown plus tables ##
+  
+  | Header | Header | Right  |
+  | ------ | ------ | -----: |
+  |  Cell  |  Cell  |   $10  |
+  |  Cell  |  Cell  |   $20  |
+  
+  * Outer pipes on tables are optional
+  * Colon used for alignment (right versus left)
+  
+  \## Markdown plus definition lists ##
+  
+  Bottled water
+  \: $ 1.25
+  \: $ 1.55 (Large)
+  
+  Milk
+  Pop
+  \: $ 1.75
+  
+  * Multiple definitions and terms are possible
+  * Definitions can include multiple paragraphs too
+  
+  *[ABBR]: Markdown plus abbreviations (produces an
+  %abbr
+    tag)

@@ -1,0 +1,50 @@
+.tabs
+  border-bottom: $base-border
+  margin: $main-padding 0 $layout-margin/2 + $main-padding
+  & > .list
+    margin: 0 0 (- $layout-margin/2) ($solution-icon-height + $layout-margin)
+    @include clearfix
+    li
+      padding: 0
+      margin-left: -$border-width
+      float: left
+      display: block
+      a, span
+        display: block
+        color: $blue
+        border: $base-border
+        height: $layout-margin
+        line-height: $layout-margin - 2*$border-width
+        padding: 0 $button-padding
+        background: #f6f5f0
+        box-shadow: inset 0 $layout-margin $layout-margin/2 (-$layout-margin/2) white
+
+      &:first-child
+        margin-left: 0
+
+
+      &.selected a,&.selected span
+        box-shadow: none
+        position: relative
+        color: $black
+        background: $tab-gray!important
+
+        &:before, &:after
+          position: absolute
+          top: 100%
+          margin-top: -$border-width
+          left: 50%
+          content: ' '
+        &:before
+          @include triangle($main-padding, $border-color, down)
+          margin-left: - $main-padding/2 - $border-width
+        &:after
+          @include triangle($main-padding - 2*$border-width, $tab-gray, down)
+          margin-left: - $main-padding/2
+
+      a:hover
+        background: $lame
+        text-decoration: underline
+
+  .content
+    background: white

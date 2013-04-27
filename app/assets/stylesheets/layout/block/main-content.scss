@@ -1,0 +1,84 @@
+.main {
+  $base-padding: 10px;
+  .main-content > .create {
+    padding: 0;
+    margin-bottom: 0;
+    background: transparent;
+    form > * {
+      padding: 0;
+      margin: 0 0 2px;
+    }
+    .input {
+      margin: 0;
+    }
+    .title input {
+      font-size: 18px;
+      background: white;
+      border: 0;
+    }
+    .content .wysihtml5 {
+      margin-bottom: -1px;
+    }
+    .security {
+      p {
+        padding: 0 $main-padding $main-padding;
+        &:first-child {
+          padding-top: $main-padding;
+        }
+      }
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+  .page-title {
+    color: $sub-gray;
+    padding: 0 0 $main-padding $solution-icon-height + $layout-margin;
+    font-weight: lighter;
+  }
+  .page-nav {
+    margin-bottom: $main-padding;
+    > .list {
+      padding-left: $solution-icon-height+$layout-margin;
+      font-size: 1.2em;
+      li {
+
+        $bord-size: 4px;
+        line-height: 1;
+        border-bottom: $bord-size solid transparent;
+        padding: 0 0 $main-margin 0;
+        margin-left: $layout-margin;
+        &:first-child {
+          margin-left: 0;
+        }
+        &.active {
+          border-color: $border-color !important;
+          color: #444;
+        }
+        & > * {
+          display: block;
+          text-decoration: none;
+          margin: 0;
+          padding: 0;
+        }
+        &:hover {
+          border-color: $green;
+        }
+      }
+      border-bottom: $base-border;
+    }
+    .new-items {
+      display: block;
+      text-align: center;
+      a {
+        line-height: $button-height;
+        padding: $button-padding - $border-width $layout-margin*2;
+        border: $border-width solid #cde4ff;
+        border-radius: 0 0 8px 8px;
+        color: #5f8ec8;
+        background-color: #fff;
+      }
+    }
+  }
+}
+

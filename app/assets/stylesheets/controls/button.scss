@@ -1,0 +1,138 @@
+$shadowBtnInset: #e9fff0;
+$shadowBtnBack: #919191;
+
+.btn {
+  font-size: 14px;
+  background: #939389;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white !important;
+  padding: 0 $button-padding;
+  height: $button-height;
+  line-height: $button-height;
+  text-decoration: none !important;
+  text-shadow: none  ;
+  position: relative;
+  border: none;
+  border-radius: 2px;
+  background-color: #939389;
+  cursor: pointer;
+  text-align: left;
+  [class^="icon-"], [class*=" icon-"] {
+    margin-right: $button-padding/2;
+    font-size: 18px;
+    vertical-align: middle;
+  }
+}
+
+.btn.small {
+  line-height: 24px;
+  font-size: 13px;
+}
+
+.btn:hover {
+  @include box-shadow(inset 0 1px 20px rgba(white, .5));
+}
+
+.btn.active, .btn:active, .open > .btn.dropdown-toggle {
+  background-image: none;
+  outline: 0;
+  @include box-shadow(inset 0 30px 30px rgba(0, 0, 0, 0.15));
+}
+
+.btn-warning {
+
+  color: white !important;
+  background-color: $orange;
+}
+
+.btn-info {
+
+  color: white !important;
+  background-color: #00dbf4;
+}
+
+.btn-fb {
+
+  color: white !important;
+  background-color: #4f7bd8;
+}
+
+.btn-regular {
+  color: white !important;
+  background-color: $blue;
+}
+
+.btn-green {
+  color: white !important;
+  background-color: $dark-green;
+}
+
+.btn-simple {
+  color: white !important;
+  background-color: #68a8ca;
+}
+
+.btn-inverse {
+
+  color: white !important;
+  background-color: #262626;
+}
+
+.btn.meter {
+  overflow: visible;
+}
+
+.attach-group {
+  @include clearfix;
+  position: relative;
+  &>*:first-child {
+    float: left;
+    width: 68% !important;
+  }
+  .attach {
+    float: left;
+    width: 30%;
+    padding-left: 0.5px;
+    border-left: $border-width solid #bc5423;
+    font-size: 16px;
+    @include box-shadow(inset 1px 0 0 #e9c2a9);
+  }
+  .dropdown {
+    position: static;
+    height: $header-line-height;
+  }
+}
+
+.btn-social {
+  background: white;
+  color: $black;
+  border: 1px solid $black;
+  width: $button-height;
+  height: $button-height;
+  line-height: $button-height;
+  text-decoration: none;
+  font-size: 1.4em;
+  text-align: center;
+  border-radius: 50%;
+  display: block;
+  &.dropdown-toggle {
+    position: relative;
+    background: none;
+    border: none;
+    overflow: hidden;
+    i {
+      font-size: 36px;
+      left: -5px;
+      top: -1px;
+      line-height: 1;
+      position: absolute;
+    }
+  }
+}
+
+.btn-fit {
+  width: 100%;
+  display: block;
+}

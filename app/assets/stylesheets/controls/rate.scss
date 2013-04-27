@@ -1,0 +1,65 @@
+.rate {
+  cursor: pointer;
+  float: right;
+  $height: $main-padding;
+  font-size: $height;
+  color: $gray;
+  .num {
+    height: $height;
+    overflow: hidden;
+  }
+  &.plus {
+    color: $green;
+  }
+  &.minus {
+    color: $red;
+  }
+  &.vote-plus, &.vote-minus {
+    &.plus {
+      .num {
+        color: #459510;
+      }
+    }
+    &.minus {
+      .num {
+        color: #951010;
+      }
+    }
+  }
+  &.vote-minus {
+    i:last-child {
+      color: #951010;
+    }
+  }
+  &.vote-plus {
+    i:first-child {
+      color: #459510;
+    }
+  }
+
+  i, .num {
+    @include inline-block;
+  }
+  i {
+    vertical-align: top;
+    color: #ffffff;
+    font-size: 0.8em;
+    line-height: $height;
+    &:first-child:hover {
+      color: #a2ca87;
+    }
+    &:last-child:hover {
+      color: #ca8787;
+    }
+
+  }
+  &:hover {
+    .num {
+      color: #444 !important;
+    }
+    i {
+      @include transition(all 0.6s ease);
+      color: #959595;
+    }
+  }
+}

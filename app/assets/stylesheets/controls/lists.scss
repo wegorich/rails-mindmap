@@ -1,0 +1,67 @@
+ul{
+  list-style-type: none;
+}
+.list {
+  & > li {
+    padding-top: $main-margin;
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+  &.inline > li {
+    @include inline-block;
+    padding: 0 10px;
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+.file-preview {
+  height: $button-height + 2*$main-padding;
+  padding: $main-padding $layout-margin!important;
+  border-top: $base-border;
+  border-top-style: dashed;
+  .delete{
+    position: relative;
+    width: $header-height;
+    margin: 0 auto;
+    &:hover{
+      background: rgba(191, 199, 208, 0.6);
+      a{
+        color: white;
+        display: block;
+        position: absolute;
+        line-height: $header-height;
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+        top:0;
+        left:0;
+
+      }
+    }
+    a{display: none;}
+  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+  & > a {
+    display: block;
+    font-size: 12px !important;
+    line-height: 1;
+  }
+
+  img {
+    display: block;
+    float:left;
+    margin: 0 $main-margin 0 0;
+    height: $button-height;
+    max-width: $button-height;
+  }
+  &.file img{
+  //  TODO for not file
+  }
+}

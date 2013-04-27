@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 
-gem "rails", ">= 3.1"
+gem 'rails', '>= 3.1'
 
 # Rails 3.1 - Asset Pipeline
 gem 'json'
@@ -22,9 +22,9 @@ gem 'devise'# :git => "git://github.com/plataformatec/devise.git"
 gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git', ref: 'a2b16bcdc9'
 
 gem 'sass-rails'
-gem "meta_search",    '>= 1.1.0.pre'
+gem 'meta_search',    '>= 1.1.0.pre'
 gem 'activeadmin', git: 'https://github.com/gregbell/active_admin.git'
-gem "mysql2", ">= 0.3.7"
+gem 'mysql2', '>= 0.3.7'
 
 gem 'vestal_versions', :git => 'git://github.com/adamcooper/vestal_versions'
 gem 'libv8'
@@ -48,40 +48,27 @@ gem 'omniauth-windowslive'
 gem 'oa-core'
 gem 'redis'
 
-gem "rspec-rails", :group => [:test, :development]
-gem "jasmine", :group => [:test, :development]
+gem 'rspec-rails', :group => [:test, :development]
+gem 'jasmine', :group => [:test, :development]
 
-gem "browser"
-
+gem 'browser'
 gem 'uuidtools'
 
-group :test do
-  gem "factory_girl_rails"
-  gem "capybara"
-  gem "guard-rspec"
-  #gem 'growl_notify'
-  #gem 'sqlite3'  
+gem 'bourbon'
+gem 'neat'
+gem 'haml-rails'
+
+gem 'html2haml'
+gem 'hpricot'
+gem 'ruby_parser'
+
+group :development do
+  gem 'better_errors'
 end
 
-# Use unicorn as the web server
-# gem 'unicorn'
+group :test do
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'guard-rspec'
+end
 
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-# gem 'ruby-debug'
-# gem 'ruby-debug19', :require => 'ruby-debug'
-
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
-
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end

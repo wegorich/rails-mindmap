@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %b Title:
+  = @bug.title
+%p
+  %b Content:
+  = @bug.content
+%p
+  %b User:
+  = @bug.user_id
+%p
+  %b Status:
+  = @bug.status_id
+%p
+  %b Assigned to user:
+  = @bug.assigned_to_user_id
+= link_to 'Edit', edit_bug_path(@bug)
+|
+\#{link_to 'Back', bugs_path}

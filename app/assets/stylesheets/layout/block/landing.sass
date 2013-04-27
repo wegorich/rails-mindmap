@@ -1,0 +1,38 @@
+$real-lang-size:144px
+$lang-size:200px
+.land-problem, .land-solution, .land-popular
+  background: image_url('landing.png') no-repeat
+  display: block
+  width: $lang-size
+  height: 136px
+  margin-bottom: $main-margin
+.land-problem
+  background-position: ($lang-size - $real-lang-size) 0
+.land-popular
+  background-position: 0 -136px
+.land-solution
+  background-position: ($lang-size - $real-lang-size)/2 -270px
+  height: 178px
+.landing
+  text-align: center
+  margin-top: $header-margin
+  h1, h2
+    font-weight: normal
+    font-size: 1.66em
+    color: #444
+    line-height: 1
+    display: block
+    margin-bottom: $main-margin
+  h2
+    color: $dark-lame
+    font-size: 1.36em
+    margin-bottom: 8px
+  .info
+    line-height: 16px
+    padding: 20px 0
+    li
+      width: 220px
+      margin-left: 56px
+      &:first-child
+        margin-left: 0
+

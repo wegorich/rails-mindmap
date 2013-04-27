@@ -1,0 +1,169 @@
+@import "values";
+
+header.page {
+  $height: $header-height;
+  background: white;
+  height: $real-header-height;
+  border: {
+    bottom: $base-border;
+    top: $border-width solid $base-background-color;
+  }
+
+  $margin: 20px;
+  $line-height: $height - $margin*2;
+
+  .wrapper {
+    height: $header-height;
+    & > * {
+      margin: ($header-height - $input-height)/2 $margin;
+    }
+  }
+
+  .logo {
+    position: absolute;
+    z-index: 110;
+    margin: 0;
+    .dropdown-toggle {
+      background: image-url('logo.png');
+      width: $header-logo-width;
+      height: $header-height;
+      display: block;
+      color: transparent;
+    }
+    .dropdown-menu {
+      top: 96%;
+      width: 250px;
+    }
+  }
+
+  .search {
+    float: left;
+    width: 70.0%;
+    padding: 0 0 0 25%;
+
+    margin: {
+      left: 0;
+      right: 0;
+    }
+    form {
+      position: relative;
+    }
+  }
+
+  .session {
+    float: left;
+    width: 30%;
+    padding-left: $layout-margin;
+    margin: {
+      left: 0;
+      right: 0;
+    }
+
+    > li {
+      padding: 0;
+    }
+
+    .social{
+      float:right;
+
+      .fb-like {
+        position: absolute;
+
+        &[fb-xfbml-state="rendered"] {
+          position: relative;
+        }
+        span {
+          vertical-align: middle;
+        }
+
+        iframe {
+          position: static !important;
+        }
+      }
+    }
+
+    .notify {
+      vertical-align: top !important;
+      .dropdown-toggle {
+        background: image_url('icons/user-message.png') 0 0 no-repeat;
+        width: $input-height - 2* $border-width;
+        height: $real-input-height;
+        font-size: 0.8em;
+        display: inline-block;
+        color: #fff;
+        text-decoration: none;
+        vertical-align: middle;
+        margin-right: $main-padding;
+        .num {
+          text-align: center;
+          line-height: 1.5;
+          font-weight: bold;
+          overflow: hidden;
+        }
+      }
+
+      .dropdown-menu {
+        left: -136px;
+        .notification {
+          width: 300px;
+        }
+        > li {
+          padding: 0;
+        }
+        .dropdown-container {
+          box-shadow: none;
+          li {
+            border-top: $base-border;
+            &:first-child {
+              border: none;
+            }
+          }
+        }
+      }
+    }
+    .user {
+      .dropdown-toggle {
+        display: inline-block;
+        vertical-align: top;
+        text-decoration: none;
+        white-space: nowrap;
+        color: $sub-gray;
+        font-size: 1.2em;
+        span {
+          display: inline-block;
+          vertical-align: middle;
+          text-overflow: ellipsis;
+          position: relative;
+          max-width: 220px;
+          overflow: hidden;
+        }
+        img {
+          display: inline-block;
+          border: $base-border;
+          width: $real-input-height;
+          height: $real-input-height;
+          vertical-align: middle;
+          margin-right: $main-margin;
+        }
+      }
+      .dropdown-menu {
+        width: 230px;
+        left: -50px;
+      }
+    }
+    .dropdown-menu {
+      & > a {
+        $padding: 10px;
+        position: relative;
+        padding: 0 $main-padding 0 $line-height+$padding;
+        vertical-align: top;
+        @include inline-block;
+        text-decoration: none;
+        line-height: $line-height;
+        &.btn {
+          line-height: $line-height;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+$footer-height: 46px;
+$header-height: 86px;
+
+$main-margin: 12px;
+$main-padding: 20px;
+$modal-padding:24px;
+$layout-margin:30px;
+$tab-line-height:36px;
+
+$border-width: 1px;
+$input-text-padding: 10px;
+$input-width: 458px;
+
+
+$real-header-height: $header-height + $border-width*2;
+$header-margin: 20px;
+$header-line-height: $real-header-height - $header-margin*2;
+
+$font-size:13px;
+
+$header-logo-width:188px;
+$base-background-color: #f7f7f5;
+
+$input-height: 30px;
+$input-padding: 10px 18px 8px;
+$input-border-radius: 14px;
+$real-input-height: $input-height + $border-width*2;
+
+$button-height: 34px;
+$button-padding: 10px;
+
+$border-color: #dadad8;
+$base-border: $border-width solid $border-color;
+$border-bold: $border-width solid $border-color;
+
+$tag-padding: 6px 8px;
+$tag-height: 24px;
+
+$auth-padding: 64px 112px;
+$solution-icon-height: 56px;
+$solution-icon-line-height: 42px;
+
+$blue: #5f8ec8;
+$icon-blue: #78a7e0;
+$light-green: #afd494;
+$green: #75a959;
+$red: #e96749;
+$orange: #f1ae32;
+$semi-greem: #88b069;
+$dark-green: #4c673d;
+$lame: #eee9d9;
+$dark-lame: #96948d;
+$tab-gray: #eae8e2;
+$black: #676767;
+$gray: #bbbbba;
+$sub-gray: #a4a4a4;
+$light-green: #afd494;
