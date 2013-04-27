@@ -1,0 +1,5 @@
+wiki:
+    map: one
+    kind: wiki
+    node_uuid: '114714bb-b861-0a51-e7ef-24c57f04c835'
+    content: 'this is a cool *strongly emphasized* paragraph with _Textile_'

@@ -1,0 +1,104 @@
+<script lang='javascript'>	
+$(document).ready(function(){
+	disableSelection(document.body);	
+	<% if @map.id %>
+		omml = new OpenMindMap.map('holder',  
+								   'toolbar', 
+								   {authtoken: '<%= form_authenticity_token %>', 
+									user: { email : '<%= current_user.email %>' }}, 
+									'<%= @map.conf %>',
+									function(){
+										$('#savemsg').show();
+									},
+									function(){
+										$('#savemsg').hide();
+									}
+								);
+		<% if @readOnly %>
+		omml.setReadOnly();
+		<% else %>
+		omml.hud(new OpenMindMap.utils.hud({id:'node-window', omm:omml}));
+		populateMenu();
+		loadClip();
+		loadBackgroundColorpicker();
+		$('#revertoversion').on('ajax:success', function(e, data){
+			var buff = '';
+			$(data).each(function(){
+				buff += "<a href='<%= map_versions_path(@map) %>/" + this.version.number + ".svg' class='lightbox btn' >" + 	this.version.number + '</a>'
+			});
+			$('#versioning-modal > .modal-body > p').html(buff);
+			$('#versioning-modal').modal({
+				keyboard: true,
+				backdrop: 'static',
+				show: true
+			});
+		});
+		inviteModal =  function(){		
+			$('#invite-user-modal').modal({
+				keyboard: true,
+				backdrop: 'static',
+				show: false
+			});
+		}
+		setInterval(function(){
+			if(omml.changed) omml.save();
+		}, 10000);
+		<% end %>
+		omml.load(<%= @map.id %>);
+			
+		$("#zoomSlider").slider({
+			value: 100, 
+			min:10, 
+			max:500, 
+			step:2,
+			slide: zoom
+		});
+		$("#zoomSlider > a").text('100 %');
+		$('#yt-query').autocomplete({source: function( request, response ) {
+						var url = String.format("https://gdata.youtube.com/feeds/api/videos?q={0}&v=2&alt=jsonc", request.term);
+						$.getJSON(url, function(resp){
+							var data = resp.data;
+							response( $.map(data.items, function(item){ 
+								return {label: item.title, value: item.id, item : item} }
+							));
+						})
+					},
+					minLength: 3,
+					select: function( event, ui ) {
+						var guid = $('#youtube-modal input#guid').val();
+						var node = omml.getNodeByGUID(guid);
+						node.videoData = ui.item.item;
+						node.loadYoutubeVideo();
+					},
+					open: function() {
+						$( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
+					},
+					close: function() {
+						$( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+					}
+				});
+				
+		changeVideo = function(guid){
+			$('#attachment-modal').modal('hide');
+			var node = omml.getNodeByGUID(guid);
+			node.showYouTubeSearchBox();
+		}		
+	<% end %>	
+	if(!screenfull){
+		screenfull = {};
+		screenfull.toggle = screenfull.request = function(){};
+		$('.fullscreen-control').hide();
+	}
+});
+</script>
+
+<div id="holder"></div>
+<% unless @readOnly %>
+<!-- Start dialog boxes -->
+<%= render 'dialogs' %>
+<!-- End dialog boxes -->
+
+<!-- Start HUD -->
+<%= render 'hud' %>
+<!-- End HUD -->
+<% end %>

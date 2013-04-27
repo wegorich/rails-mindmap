@@ -1,0 +1,69 @@
+<% unless user_signed_in? %>
+<div class="row-fluid">
+	<%= render 'ie_is_bad' %>
+	<div class="span12">
+		<div class="hero-unit">
+			<div class="row-fluid">
+				<div class="span8">	
+					<div id="myCarousel" class="carousel">
+					  <!-- Carousel items -->
+					  <div class="carousel-inner">
+					    <div class="active item">								
+							<div class='offset-home'>
+								<%= image_tag 'logo.png' %>
+								<h1>Hi, maperino!</h1>
+								<p style='width:500px'>
+									Welcome to OpenMindMap, a place where you can create your own Mind Map and Dialogue Map! 
+									You don't know what is a mind map or a dialogue map? See below for some public maps or 
+									<%= link_to "sign in", new_user_registration_path %> to begin mapping!
+								</p>
+							</div>
+					    </div>
+					    <div class="item hidden-tablet hidden-phone">
+					    	<iframe class='offset-home' width="470" height="264" src="http://www.youtube.com/embed/W8Apl5-xhsA" frameborder="0" allowfullscreen>					    		
+					    	</iframe>
+					    </div>
+					    <div class="item hidden-tablet hidden-phone">
+							<%= image_tag 'map_example.png', :size => '470x264', :class => 'offset-home', :style => 'padding-top:60px' %>					    	
+					    </div>
+					  </div>
+					  <!-- Carousel nav -->
+					  <a class="carousel-control left hidden-tablet hidden-phone" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+					  <a class="carousel-control right hidden-tablet hidden-phone" href="#myCarousel" data-slide="next">&rsaquo;</a>
+					</div>									
+				</div>
+				<div class="span4"><%= render 'login_options' %></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="row hidden-tablet hidden-phone">
+	<div class="span4">
+		<h2>Hi, maperino!</h2>
+		<p>OpenMindMap is a new online collaborative tool for mind mapping and dialogue mapping! 
+			It's free for everyone register in this beta period! Please sing in, use it and feedback!</p>
+	</div>
+	<div class="span4">
+		<h2>Mind map</h2>
+		<p>A mind map is a diagram used to represent words, ideas, tasks, 
+			or other items linked to and arranged around a central key word or idea. 
+			<%= link_to :Wikipedia, 'http://en.wikipedia.org/wiki/Mind_map', :target => 'blank' %>. 
+		</p>
+	</div>
+	<div class="span4">
+		<h2>Dialogue map</h2>
+		<p>Dialogue Mapping™ is a radically inclusive facilitation process that creates a diagram 
+			or 'map' that captures and connects participants' comments as a meeting conversation unfolds. 
+			<%= link_to 'Cognexus institute', 'http://cognexus.org/id41.htm', :target => 'blank' %></p>
+	</div>        
+</div>
+
+<% end %>
+<div class='page-header hidden-tablet hidden-phone'  style='margin-top:30px'>
+	<h1>Explore <small>See what users can do with OpenMindMap</small></h1>
+</div>
+<div class='hidden-tablet hidden-phone'>
+<%= render 'explore' %>
+</div>

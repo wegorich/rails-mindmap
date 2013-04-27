@@ -1,0 +1,32 @@
+<div class="span4">
+	<tr>
+        <td>
+        	<%= link_to map.title, edit_map_path(map) %>
+			<% if map.users.size > 0  %> 
+				<span class="label label-success">Shared (<%= map.users.size %>)</span>
+			<% end %>
+			<% if map.isPublic  %>
+				<span class="label label-info">Public</span>
+			<% end %>
+		</td>
+		<td>
+			<% if map.user == current_user %>
+			me
+			<% else %>
+			<%= map.user.email %>
+			<% end %>
+		</td>
+		<td>
+			<%= map.updated_at.to_formatted_s(:short)  %>
+			<% if map.last_editor && map.last_editor != current_user %>
+			<small><%= map.last_editor.email %></small>
+			<% else %>
+			<small>me</small>
+			<% end %>
+		</td>
+        <td>
+        	<%= link_to 'Edit', edit_map_path(map), :class => 'btn btn-success' %>
+        	<%= link_to "Delete", map_path(map), :confirm => "Are you sure?", :method => :delete, :class => 'btn btn-danger' %>
+        </td>
+      </tr>
+</div>

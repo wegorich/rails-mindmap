@@ -1,0 +1,6 @@
+OpenMindMap
+Create mind map, wiki maps and dialogue maps in your browser. Share and collaborate with your friends
+
+Requires: 
+RubyOnRails 
+Redis server running on the same machine at 6379 port

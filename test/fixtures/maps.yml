@@ -1,0 +1,6 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+coolmap:
+  title: MyString
+  content: '{"nodes":[{"scalelevel":1,"color":"#00f","position":{"x":640,"y":349.5},"size":{"w":100,"h":60},"text":"My node","radius":10,"guid":"1f2eac1c-3e85-1bb8-7a48-c509ac61898d","isroot":true},{"scalelevel":1,"color":"#bf0000","position":{"x":770,"y":349.5},"size":{"w":70,"h":40},"text":"My node","radius":10,"guid":"114714bb-b861-0a51-e7ef-24c57f04c835","parentGUID":"1f2eac1c-3e85-1bb8-7a48-c509ac61898d"}],"connections":{}}'
+  user: one

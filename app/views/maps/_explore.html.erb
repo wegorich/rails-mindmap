@@ -1,0 +1,16 @@
+<% if @maps.empty? %>
+Ops! This is embarrassing... we don't have a public maps yet!
+<% else %> 
+<ul class="thumbnails">
+	<% @maps.each do |map| %>
+    <li>
+		<div class="thumbnail" style='height:100px;'>
+    		<a href='<%= map_path(map) %>'> 
+				<img alt="15" height="90" width="90" src="data:image/svg+xml;charset=utf-8;base64,<%= ActiveSupport::Base64.encode64(map.svgdata.to_s) %>" >	 
+			</a> 	  
+		</div>
+    </li>
+	<% end %>    
+</ul>
+<%= link_to('Can\'t wait? Sing in for free and create a new map >>', new_map_path, :class => "btn btn-primary btn-large") unless user_signed_in? %>
+<% end %>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OpenMindMap</title>
+<%= stylesheet_link_tag    "application" %>
+<%= javascript_include_tag "application", 'maps', 'http://js.pusherapp.com/1.9/pusher.min.js' %>
+<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0;" />
+<%= auto_discovery_link_tag(:rss, news_index_url(:format => :rss)) %>
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->  
+  <%= csrf_meta_tag %>
+</head>
+<body>
+	<div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="<%= @container_class || 'container' %>">
+		  <%= link_to image_tag('logo_small.png', :boreder => 0, :size => '37x20', :style => 'padding-right:5px') + "OpenMindMap", '/', :class => 'brand' %>
+
+          <ul class="nav">	
+
+          	<li class="dropdown">
+          		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Maps<b class="caret"></b></a>
+          		<ul class='dropdown-menu'>
+          			<li><%= link_to 'New', new_map_path -%></li>
+          			<li><%= link_to 'Import',  maps_import_path %></li>	
+          			<li class="divider"></li>    
+          			<li class="nav-header version">Current revision: <%= @map.version %></li>          				
+          			<li><%= link_to_function "Save revision",  "omml.save({versioning:true})" -%></li>
+          			<li><%= link_to "Show revisions", map_versions_path(@map, :format => :json), :remote => true, :id => :revertoversion %></li>
+          			<li class="divider"></li> 
+          			<li><%= link_to 'Public maps', maps_public_path %></li>
+          		</ul>
+          	</li>
+			<li class="dropdown">
+          		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Sharing<b class="caret"></b></a>
+          		<ul class='dropdown-menu'>
+		      		<% if @map.user == current_user %>
+						<% if @map.isPublic %>
+							<li><%= link_to_function "Set private", "omml.share()", :id => 'share_button' %></li>
+						<% else %>
+							<li><%= link_to_function "Set public", "omml.share()", :id => 'share_button' %></li>
+						<% end %>
+				 		<% if @map.id %>
+							<li><%= link_to_function "Invite friend", "$('#invite-user-modal').modal()" %></li>							
+						<% end %>			
+					<% end %>
+          		</ul>
+          	</li>		
+          	<li class="dropdown">
+          		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Background<b class="caret"></b></a>
+	          	<ul class='dropdown-menu'>	
+	      			<li><%= link_to_function "Color", "toggleBackgroundColorpicker()", :id => 'colorpickerBackgroundHolder' %></li>
+					<li><%= link_to_function "Image", "toggleBackgroundLibrary()" %></li>	
+          			<li class="divider"></li>    
+					<li><%= link_to_function "Clear", "omml.resetBackground()" %></li>											
+	      		</ul>				
+      		</li>
+      		<li class="dropdown">
+          		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Insert<b class="caret"></b></a>
+	          	<ul class='dropdown-menu'>        	
+					<li><%= link_to_function "Image", "toggleClipartLibrary()" %></li>
+				</ul>
+			</li>
+      		<li class="dropdown">
+          		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Zoom<b class="caret"></b></a>
+	          	<ul class='dropdown-menu'>        	
+					<li><div id='zoomSlider'></div></li>
+					<li class="divider"></li> 
+					<li><%= link_to_function "Reset", "resetZoom()" %></li>
+				</ul>
+			</li>
+			<li class="dropdown">
+          		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Node<b class="caret"></b></a>
+	          	<ul class='dropdown-menu'>
+	          		<li><%= link_to_function "Add child (INS, I)", "omml.selectedNodeActions('insertnode')" %></li>        	
+	          		<li><%= link_to_function "Add sibling (SHIFT+INS, SHIFT+I)", "omml.selectedNodeActions('insertsibling')" %></li>
+					<li><%= link_to_function "Delete (DEL)", "omml.selectedNodeActions('delete')" %></li>
+					<li class="divider"></li>  
+					<li><%= link_to_function "Lock/Unlock (L)", "omml.selectedNodeActions('lockunlockchild')" %>-top</li>
+					<li><%= link_to_function "Fold/Unfold (F)", "omml.selectedNodeActions('foldunflodchild')" %></li>
+					<li class="divider"></li>  
+					<li><%= link_to_function "Center root node on map", "omml.centerRootNode('foldunflodchild')" %></li>
+					<li><%= link_to_function "Center selected node on map", "omml.selectedNodeActions('centernode')" %></li>
+				</ul>
+			</li>
+			<li class='fullscreen-control'>
+				<%= link_to_function "Toggle fullscreen", "screenfull.toggle( document.documentElement );" %>
+			</li>
+			<li id='play-map'>
+				<%= link_to_function "Play", "playMap()" %>
+			</li>
+			<li style='display:none' id='play-next'>
+				<%= link_to_function "Next", "omml.next()" %>
+			</li>
+			<li style='display:none' id='play-end'>
+				<%= link_to_function "Close", "closeMap()" %>				
+			</li>
+			<li id='play-idx' style='display:none;padding-top:10px'></li>
+			<li><span id='savemsg' class="label label-info hide">Saving...</span></li>
+        </ul>
+		<ul class="nav pull-right">
+			
+			<li class="divider-vertical"></li>			
+			<li>
+				<ul class="dropdown-menu">
+					<li><%= link_to "Edit profile", edit_user_registration_path(current_user) %></li>
+					<li class="divider"></li>
+					<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+				</ul>
+			</li>
+		</ul>
+		
+		
+		<p class="navbar-text pull-right">
+			<span id='map-title' class='brand'>
+				<% if @map.id %>
+					<%= @map.title %>
+				<% else %>
+					New map
+				<% end %>
+			</span>
+        </p> 
+	</div>
+   </div>
+ </div>
+
+<% if notice %>
+	<script lang='javascript'>$(".alert-message").alert()</script>
+	<div class='alert' id="notice"> <a class="close" data-dismiss="alert" href="#">&times;</a>
+	 <%= notice %></div>
+<% end %>
+<div class="<%= @container_class || 'container' %>">	
+<%= yield %>
+</div> <!-- /container -->
+</hr>
+<footer>
+  <p>&copy; Piero Bozzolo 2011-2012</p>
+</footer>
+</body>
+</html>

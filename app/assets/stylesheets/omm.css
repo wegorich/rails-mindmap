@@ -1,0 +1,15 @@
+#slider {
+	width: 300px;
+}
+
+/* Override some defaults */
+html, body {
+  background-color: #eee;
+}
+body {
+  padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
+}
+div.topbar > div.topbar-inner > div.container-fluid > p.pull-right {
+	color: #ffc;
+}
+     
