@@ -3,7 +3,8 @@
  */
 $(document).ready(function () {
 
-    var baseHeight = $('footer.page').height()+ $('header.page').height() + 3;
+    var baseHeight = $('footer.page').height() + $('header.page').height() + 3;
+
     function resizeDiv() {
         vpw = $(window).width();
         vph = $(window).height() - baseHeight;
@@ -14,6 +15,11 @@ $(document).ready(function () {
         resizeDiv();
     });
     resizeDiv();
+    setTimeout(function () {
+        var map = $('.map');
+        map.animate({ scrollTop: map.find('svg').height() / 2.5, scrollLeft: map.find('svg').width() / 2.5  }, "fast");
+    }, 300);
+    $(".alert").delay(3200).fadeOut(300);
 });
 
 
