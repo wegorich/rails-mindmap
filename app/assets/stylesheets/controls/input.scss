@@ -8,6 +8,7 @@
   border: $base-border;
   background-color: white;
   border-radius: $input-border-radius;
+  behavior: url(/assets/PIE.htc);
   &:focus {
     border-color: dodgerblue;
     z-index: 100 !important;
@@ -19,7 +20,7 @@ textarea {
   resize: none;
   line-height: 1;
   height: $header-height;
-  padding: $main-padding;
+  padding: $input-text-padding;
 }
 
 .wysihtml5 {

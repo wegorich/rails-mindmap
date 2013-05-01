@@ -1,0 +1,50 @@
+.tag-breadcrumbs
+  background: $sub-lame
+  border-bottom: $tag-breadcrumbs-border
+  .full-main-content
+    @include outer-container
+    padding: 0 $main-padding
+    vertical-align: middle
+    @include clearfix
+    li
+      position: relative
+      padding: $main-padding $layout-margin $main-padding 2 * $layout-margin
+      max-width: 40%
+      @include inline-block
+      margin-bottom: - $main-padding/2
+      vertical-align: middle
+      .tags
+        margin-bottom: 0
+      .tag
+        background: none
+        border-radius: 0
+        padding: 0
+        height: auto
+        box-shadow: $link-box-shadow
+
+      &.current
+        max-width: 20%
+        font-size: 1.2em
+        margin-bottom: 0
+        .tag
+          box-shadow: none
+          color: #444
+          margin: 0
+
+      &:after, &:before
+        content: ' '
+        position: absolute
+        left: 100%
+        top: 0
+      &:after
+        top: 4px
+        @include triangle(2.7*$main-padding - 10*$border-width, $sub-lame, right)
+      &:before
+        @include triangle(2.7*$main-padding - 2*$border-width, $tag-breadcrumbs-color, right)
+
+      &:first-child
+        padding-left: 0
+      &:last-child
+        padding-right: 0
+        &:after, &:before
+          border: 0

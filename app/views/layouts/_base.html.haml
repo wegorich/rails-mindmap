@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %meta{charset: 'UTF-8'}
+    %meta{name: 'desciption', content: content_for?(:description) ? yield(:description) : 'Отобрази свое сознание'}
+    %meta{content: 'width=device-width, initial-scale=1.0', name: 'viewport'}/
+    %meta{content: 'user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0;', name: 'viewport'}/
+    = auto_discovery_link_tag(:rss, news_index_url(:format => :rss))
+
+    - if content_for?(:keywords)
+      %meta{name: 'keywords', content: yield(:keywords)}
+
+    = stylesheet_link_tag 'application', :media => 'all'
+    %link{href: 'http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,cyrillic', rel: 'stylesheet', type: 'text/css'}/
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+
+    %title
+      = "eMinder | #{yield(:title)}"
+    = yield(:head)
+  %body
+    .wrap
+      = yield(:header)
+      = render 'shared/ie_is_bad'
+      = yield(:landing)
+      = yield(:main)
+      = yield(:footer)

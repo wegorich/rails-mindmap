@@ -1,0 +1,62 @@
+@import 'wiki';
+
+.aside-content {
+  padding: 0;
+  background: none;
+  float: left;
+  width: 30%;
+  padding-left: $layout-margin;
+  $padding: 22px;
+
+  .aside-item {
+    margin-top: $layout-margin;
+    &.small {
+      padding-right: 20%;
+    }
+    .icon{
+      text-align: center;
+    }
+    p, .list {
+      padding: 0 0 $main-padding - 2*$border-width;
+      line-height: 1;
+      font-size: 1.05em;
+    }
+    p:last-child{
+      padding: 0;
+    }
+    .btn {
+      width: 100%;
+      margin-bottom: $main-margin;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  .classification, .find-solution {
+    text-align: left;
+    .input {
+      margin: 0;
+    }
+  }
+
+  .new-issue {
+    .list li {
+      padding: ($padding/2 - 2px) 0 0;
+      &.separator {
+        border-bottom: $border-width dashed #c0c0c0;
+      }
+    }
+  }
+}
+
+.full-main-content{
+  .bottom{
+    .aside-item{
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}

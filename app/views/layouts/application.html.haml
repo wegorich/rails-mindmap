@@ -1,64 +1,24 @@
-!!!
-%html
-  %head
-    %title OpenMindMap
-    = stylesheet_link_tag    "application"
-    = javascript_include_tag "application", controller_name
-    = auto_discovery_link_tag(:rss, news_index_url(:format => :rss))
-    / Le HTML5 shim, for IE6-8 support of HTML elements
-    /[if lt IE 9]
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    = csrf_meta_tag
-    %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
-    %meta{:content => "user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0;", :name => "viewport"}/
-  %body
-    .navbar.navbar-fixed-top.hidden-tablet.hidden-phone
-      .navbar-inner
-        %div{:class => @container_class || 'container'}
-          = link_to image_tag('logo_small.png', :boreder => 0, :size => '160x56', :style => 'padding-right:5px'), '/', :class => 'brand'
-          - if user_signed_in?
-            %ul.nav
-              %li= link_to "Public maps", maps_public_path
-              %li= link_to 'New Map',     new_map_path
-              %li= link_to 'Import Map',  maps_import_path
-          %ul.nav.pull-right
-            - unless user_signed_in?
-              %li= link_to "New to OpenMindMap? Sign Up or", new_user_registration_path
-            %li#fat-menu.dropdown
-              - if user_signed_in?
-                - if current_user.name
-                  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                    = current_user.name
-                    %b.caret
-                - else
-                  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                    = current_user.email
-                    %b.caret
-                %ul.dropdown-menu
-                  %li= link_to "Edit profile", edit_user_registration_path(current_user)
-                  %li.divider
-                  %li= link_to "Sign out", destroy_user_session_path, :method => :delete
-              - else
-                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                  Login with...
-                  %b.caret
-                %ul.dropdown-menu
-                  %li= link_to "Username and password", new_user_session_path
-                  %li.divider
-                  %li= link_to "Facebook", user_omniauth_authorize_path(:facebook)
-                  %li= link_to 'Google', user_omniauth_authorize_path(:google_apps)
-                  %li= link_to 'Twitter', user_omniauth_authorize_path(:twitter)
-                  %li= link_to "GitHub", user_omniauth_authorize_path(:github)
-                  %li= link_to "Yahoo", user_omniauth_authorize_path(:yahoo, :openid_url => "http://yahoo.com")
-                  %li= link_to "WindowsLive", user_omniauth_authorize_path(:windowslive, :openid_url => "http://oauth.live.com", |
-                      :redirect_uri => 'http://openmindmap.me/users/auth/windowslive/callback')                                 |
-    - if notice
-      %script{:lang => "javascript"} $(".alert-message").alert()
-      #notice.alert
-        %a.close{"data-dismiss" => "alert", :href => "#"} &times;
-        = notice
-    %div{:class => @container_class || 'container'}
-      = yield
-    / /container
-    %footer
-      %p &copy; Egor Malkevich 2013
+- content_for :header do
+  = render 'layouts/header'
+
+- content_for :main do
+  - if notice
+    %script{:lang => 'javascript'} $(".alert-message").alert()
+    #notice.alert
+      %a.close{'data-dismiss' => 'alert', href: '#'} &times;
+      = notice
+
+  %section.main{class: params['controller']}
+    - if content_for? :aside
+      %section.main-content
+        = yield
+      %aside.aside-content
+        = yield(:aside)
+    - else
+      .full-main-content
+        = yield
+
+- content_for :footer do
+  = render 'layouts/footer'
+
+= render 'layouts/base'

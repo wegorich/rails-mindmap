@@ -1,0 +1,63 @@
+-# coding: UTF-8
+%header.page
+  .wrapper
+    %section.logo
+      = link_to 'eMinder', root_path
+
+    %section.search
+      - if user_signed_in?
+        %ul.list.inline
+          %li= link_to 'Public maps', maps_public_path
+          %li= link_to 'New Map',     new_map_path
+          %li= link_to 'Import Map',  maps_import_path
+
+    %ul.list.inline.session
+      - if user_signed_in?
+
+        -#%li.dropdown.notify
+        -#  = link_to '#', class:'dropdown-toggle', data:{toggle:'dropdown', target:'#'} do
+        -#    .num= user_notification.length
+        -#  %ul.dropdown-menu.up
+        -#    %li
+        -#
+        -#      %ul.dropdown-menu.dropdown-container
+        -#        - user_notification.each do |f|
+        -#          %li{class: f[:new] ? 'active' : ''}
+        -#            = render partial: 'shared/notification', locals: { noty: f }
+        -#
+        -#    %li
+        -#      .footer
+        -#        = link_to 'Все уведомления', '#'
+        -#        = link_to '#', class: 'r' do
+        -#          %i.icon-cog
+        -#          Настроить уведомления
+
+      - unless user_signed_in?
+        %li= link_to 'New to eMinder? Sign Up or', new_user_registration_path
+      %li#fat-menu.dropdown.user
+        - if user_signed_in?
+          %a.dropdown-toggle{'data-toggle' => 'dropdown', href: '#'}
+            -#= image_tag user_avatar(current_user)
+            - if current_user.name
+              %span= current_user.username
+            - else
+              %span= current_user.email
+              %i.icon-caret-down
+
+          %ul.dropdown-menu.up
+            %li= link_to 'Edit profile', edit_user_registration_path(current_user)
+            %li.divider
+            %li= link_to 'Sign out', destroy_user_session_path, method: :delete
+        - else
+          %a.dropdown-toggle{'data-toggle' => 'dropdown', href: '#'}
+            Login with...
+            %i.icon-caret-down
+          %ul.dropdown-menu.up
+            %li= link_to 'Username and password', new_user_session_path
+            %li.divider
+            %li= link_to 'Facebook', user_omniauth_authorize_path(:facebook)
+            %li= link_to 'Google', user_omniauth_authorize_path(:google_apps)
+            %li= link_to 'Twitter', user_omniauth_authorize_path(:twitter)
+            %li= link_to 'GitHub', user_omniauth_authorize_path(:github)
+            %li= link_to 'Yahoo', user_omniauth_authorize_path(:yahoo, openid_url: 'http://yahoo.com')
+            %li= link_to 'WindowsLive', user_omniauth_authorize_path(:windowslive, openid_url: 'http://oauth.live.com', :redirect_uri => 'http://openmindmap.me/users/auth/windowslive/callback')

@@ -1,5 +1,5 @@
 $footer-height: 46px;
-$header-height: 86px;
+$header-height: 56px;
 
 $main-margin: 12px;
 $main-padding: 20px;
@@ -18,7 +18,7 @@ $header-line-height: $real-header-height - $header-margin*2;
 
 $font-size:13px;
 
-$header-logo-width:188px;
+$header-logo-width:160px;
 $base-background-color: #f7f7f5;
 
 $input-height: 30px;
@@ -39,8 +39,17 @@ $tag-height: 24px;
 $auth-padding: 64px 112px;
 $solution-icon-height: 56px;
 $solution-icon-line-height: 42px;
+$max-width: 1160px;
+
+$tag-breadcrumbs-height: $header-height - $main-padding - 2*$border-width;
+$tag-breadcrumbs-color: #fcfcfc;
+$tag-breadcrumbs-border: $border-width solid $tag-breadcrumbs-color;
+
+$link-box-shadow: 0 1px 1px -1px;
+$forms-input-margin: 140px;
 
 $blue: #5f8ec8;
+$light-blue: #99c5fa;
 $icon-blue: #78a7e0;
 $light-green: #afd494;
 $green: #75a959;
@@ -49,9 +58,14 @@ $orange: #f1ae32;
 $semi-greem: #88b069;
 $dark-green: #4c673d;
 $lame: #eee9d9;
+$sub-lame: #f1eee3;
 $dark-lame: #96948d;
 $tab-gray: #eae8e2;
+$solution-gray: #e8e8e6;
 $black: #676767;
 $gray: #bbbbba;
 $sub-gray: #a4a4a4;
 $light-green: #afd494;
+$header-blue: #f5efe6;
+$header-green: #dda;
+$footer-back: #5a5a5a;

@@ -2,6 +2,7 @@ $shadowBtnInset: #e9fff0;
 $shadowBtnBack: #919191;
 
 .btn {
+  behavior: url(/assets/PIE.htc);
   font-size: 14px;
   background: #939389;
   display: inline-block;
@@ -12,7 +13,6 @@ $shadowBtnBack: #919191;
   height: $button-height;
   line-height: $button-height;
   text-decoration: none !important;
-  text-shadow: none  ;
   position: relative;
   border: none;
   border-radius: 2px;
@@ -67,6 +67,10 @@ $shadowBtnBack: #919191;
 .btn-green {
   color: white !important;
   background-color: $dark-green;
+}
+.btn-light-green {
+  color: white !important;
+  background-color: $green;
 }
 
 .btn-simple {

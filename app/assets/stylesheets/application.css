@@ -6,9 +6,8 @@
 *= require jquery.contextMenu
 *= require colorpicker
 *= require jquery-ui.custom
-*= require bootstrap.min
+
 *= require attachments
-*= require omm
 *= require layout/layout
 */
 :focus{

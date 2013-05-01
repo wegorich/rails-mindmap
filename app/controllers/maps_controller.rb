@@ -8,7 +8,7 @@ class MapsController < ApplicationController
   def index
     unless current_user
       @maps = Map.public
-      render :action => "public"
+      render 'maps/index'
       return
     end
     @maps = current_user.maps
@@ -50,7 +50,7 @@ class MapsController < ApplicationController
   def public
      @maps = Map.public
      respond_to do |format|
-       format.html # index.html.erb
+       format.html  {render 'maps/index'}
        format.json  { render :json => @maps }
      end     
   end

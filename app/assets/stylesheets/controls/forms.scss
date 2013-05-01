@@ -10,9 +10,6 @@
       font-weight: normal;
     }
   }
-  a {
-    font-size: $font-size;
-  }
   .input {
     label {
       display: block;
@@ -21,7 +18,7 @@
         color: #f69556;
       }
     }
-    margin-top: $main-margin;
+    margin-top: $main-padding;
     :first-child {
       margin-top: 0;
     }

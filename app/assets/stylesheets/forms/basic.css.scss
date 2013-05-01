@@ -1,79 +1,98 @@
-.aside_form{
-  legend{
+.aside_form {
+  legend {
     margin-left: 60px;
   }
-  label{
+  label {
     font-weight: bold;
     display: inline-block;
     width: 60px;
     text-align: right;
   }
-  input[type="submit"]{
+  input[type="submit"] {
     margin-top: 5px;
     margin-left: 65px;
   }
 }
-.basic_form{
-  .field{
+
+.basic_form {
+  font-size: 1em;
+  h1, h2 {
+    color: $sub-gray;
+    line-height: 1;
+    margin-bottom: $layout-margin + $main-margin;
+  }
+  .input {
+    padding-left: $forms-input-margin;
+    label {
+      position: absolute;
+      left: 0;
+      width: $forms-input-margin - $main-padding;
+      text-align: right;
+      padding-top: $main-margin/2;
+      line-height: 1.5;
+    }
+    input, textarea {
+      width: 100%;
+      display: block;
+      padding: {
+        left: $input-text-padding;
+        right: $input-text-padding;
+      }
+      border-radius: 2px;
+      @include placeholder {
+        font-size: .8em;
+        font-style: italic;
+      }
+    }
+    textarea{
+      height: auto;
+    }
+    .hint {
+      color: $sub-gray;
+      display: block;
+      margin-top: $main-margin/2;
+      line-height: 1.5;
+    }
+  }
+  .btn {
+    margin-top: $main-margin;
+    margin-left: $forms-input-margin;
+    min-width: $forms-input-margin+$main-margin;
+    margin-top: $main-padding;
+    text-align: center;
+  }
+  .field {
     display: block;
     clear: both;
   }
   $label_width: 15em;
   $input_width: 40em;
-  legend{
+  legend {
     margin-left: $label_width;
     padding: .8em 0;
   }
-  label{
-    padding-right: .4em;
-    text-align: right;
-    width: $label_width;
-    display: block;
-    float: left;
-    padding-top: .4em;
-    clear: left;
-  }
-  input[type='text'], textarea{
-    width: $input_width;
-    border-radius: .2em;
-    border: 1px solid #ddd;
-    padding: .6em;
-    clear: both;
-  }
-  input[type='submit']{
-    clear: both;
-    margin-top: .4em;
-    margin-left: $label_width;
-    background: #fff;
-  }
   // Fields like radio buttons, etc, with label
-  .not_input_field{
+  .not_input_field {
     line-height: 2.5em;
   }
-  .one-line{
+  .one-line {
     display: block;
-    clear: both;
-    margin-left: $label_width;
-    margin-top: 1em;
-    label{
+    margin-left: $forms-input-margin;
+    margin-top: $main-margin/2;
+    label {
       display: inline-block;
       float: none;
       width: auto;
     }
   }
-  input.small{
+  input.small {
     width: $input_width/4;
   }
-  input.medium{
+  input.medium {
     width: $input_width/2;
   }
-  fieldset{
+  fieldset {
     margin-bottom: .5em;
-    border: 1px dotted #eee;
-  }
-  .select2{
-    border-radius: .2em;
-    border: 1px solid #eee;
-    width: 34em;
+    border: $base-border;
   }
 }

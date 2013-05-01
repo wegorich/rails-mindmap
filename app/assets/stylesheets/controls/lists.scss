@@ -33,7 +33,7 @@ ul{
       background: rgba(191, 199, 208, 0.6);
       a{
         color: white;
-        display: block;
+        display: inline;
         position: absolute;
         line-height: $header-height;
         width: 100%;
@@ -49,9 +49,12 @@ ul{
   overflow: hidden;
   text-overflow: ellipsis;
   & > a {
-    display: block;
+    display: inline;
     font-size: 12px !important;
     line-height: 1;
+  }
+  & > p {
+    line-height: 1.4;
   }
 
   img {

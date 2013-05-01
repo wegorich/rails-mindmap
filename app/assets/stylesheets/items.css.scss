@@ -293,6 +293,38 @@ form.edit_issue, form.new_issue {
   &:last-child .content {
     border-bottom: none;
   }
+  .solution-author {
+    margin-bottom: $main-margin/2;
+    position: relative;
+    a {
+      color: $black;
+    }
+    .rate {
+      float: none;
+      font-size: 13px;
+    }
+  }
+  .solution-body {
+    background: white;
+    border: $base-border;
+    border-color: $solution-gray;
+    padding: $input-text-padding $main-margin;
+    position: relative;
+    border-radius: $main-margin / 2;
+    &:before, &:after {
+      position: absolute;
+      bottom: 100%;
+      left: $layout-margin;
+      content: ' ';
+    }
+    &:before {
+      @include triangle($main-margin + 2* $border-width, $solution-gray, up);
+    }
+    &:after {
+      @include triangle($main-margin, white, up);
+      margin-left: 1px;
+    }
+  }
   .descr {
     color: $sub-gray;
     font-size: 12px;
@@ -302,11 +334,11 @@ form.edit_issue, form.new_issue {
       color: $black;
     }
   }
-  .title{
+  .title {
     margin-bottom: .2em;
   }
   .content {
-    .title a{
+    .title a {
       font-weight: normal;
       color: #444;
     }
@@ -319,7 +351,7 @@ form.edit_issue, form.new_issue {
     a, span {
       font-size: 12px;
     }
-    span{
+    span {
       color: $sub-gray
     }
     .list li:first-child {
@@ -327,34 +359,35 @@ form.edit_issue, form.new_issue {
     }
   }
 }
-.issues-same{
-  h3, ul{
+
+.issues-same {
+  h3, ul {
     padding: 0 $main-padding;
   }
-  > ul{
+  > ul {
     display: block;
     border-top: $base-border;
     margin-top: $main-margin/2;
     padding-top: $main-margin;
     @include clearfix;
   }
-  li{
+  li {
     margin-top: 0;
     padding-top: 0;
     padding-right: $main-padding + $layout-margin;
     border: 0;
     float: left;
     width: 33.333%;
-    .s-icon-padding{
+    .s-icon-padding {
       margin-left: $solution-icon-height + $main-padding;
     }
-    .rate{
+    .rate {
       font-size: 1.1em;
     }
-    a{
-      color:$black;
-      i{
-        color:$gray;
+    a {
+      color: $black;
+      i {
+        color: $gray;
       }
     }
   }

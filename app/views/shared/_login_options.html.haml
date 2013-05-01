@@ -1,0 +1,22 @@
+.auth
+  .block
+    %form#new_user
+      %header
+        %h2
+          Зарегистрируйтесь!
+        %p
+          Что бы принять участие в коллективном решении проблем
+      %section
+        = simple_form_for current_user, as: :user, url: registration_path(:user) do |f|
+          = f.email_field :email, placeholder: 'введите свой email'
+          .attach-group
+            = f.password_field :password, placeholder: 'пароль'
+            = f.submit 'Регистрация', class: 'btn btn-light-green'
+  .block
+    %p
+      или войдите c помощью аккаунта социальной сети:
+    = render 'shared/partial/list'
+
+    = link_to new_user_session_path, class: 'sing-in fancybox', data:{type:'js'} do
+      %i.icon-key
+      Вход по паролю

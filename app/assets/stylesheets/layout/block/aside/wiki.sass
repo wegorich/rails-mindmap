@@ -1,0 +1,25 @@
+.wiki
+  padding: $main-padding $layout-margin
+  border: $base-border
+  background: white
+  position: relative
+  p
+    font-size: 0.9em !important
+  img
+    text-align: center
+
+.peoples
+  behavior: url(/assets/PIE.htc)
+  @include outer-container
+  margin: - ($input-text-padding - 2* $border-width) 0 $main-margin
+  a
+    box-shadow: none
+    border: $base-border
+    @include span-columns(1 of 5)
+    margin-right: 3%
+    margin-top: $input-text-padding - 2* $border-width
+    &:hover
+      box-shadow: 0 0 $main-margin/2 2px $light-blue
+    img
+      display: block
+      width: 100%

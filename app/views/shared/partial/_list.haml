@@ -1,0 +1,19 @@
+%ul.providers.list.inline
+  %li
+    = link_to user_omniauth_authorize_path(:facebook), class: 'btn-social' do
+      %i.icon-facebook-sign
+  %li
+    = link_to user_omniauth_authorize_path(:google_apps), class: 'btn-social' do
+      %i.icon-google-plus-sign
+  %li
+    = link_to user_omniauth_authorize_path(:twitter), class: 'btn-social' do
+      %i.icon-twitter-sign
+  %li
+    = link_to user_omniauth_authorize_path(:github), class: 'btn-social' do
+      %i.icon-github-alt
+  -#%li
+  -#  = link_to user_omniauth_authorize_path(:yahoo, openid_url: "http://yahoo.com"), class: 'btn-social' do
+  -#    = image_tag('social/yahoo.png')
+  -#%li
+  -#  = link_to user_omniauth_authorize_path(:windowslive, openid_url: "http://oauth.live.com", redirect_uri: 'http://openmindmap.me/users/auth/windowslive/callback'), class:'btn-socia' do
+  -#    = image_tag('social/windows.png')

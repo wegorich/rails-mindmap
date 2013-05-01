@@ -52,12 +52,15 @@
           margin-left: 0;
         }
         &.active {
-          border-color: $border-color !important;
-          color: #444;
+          border-color: $gray !important;
+          > * {
+            color: #444;
+          }
         }
         & > * {
           display: block;
           text-decoration: none;
+          box-shadow: none;
           margin: 0;
           padding: 0;
         }

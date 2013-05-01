@@ -1,0 +1,103 @@
+-# coding: UTF-8
+= javascript_include_tag "application", 'maps', 'http://js.pusherapp.com/1.9/pusher.min.js'
+%header.page
+  .wrapper
+    %section.logo
+      = link_to 'eMinder', root_path
+
+    %section.search
+      - if user_signed_in?
+        %ul.list.inline
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              Maps
+              %b.caret
+            %ul.dropdown-menu
+              %li= link_to 'New', new_map_path
+              %li= link_to 'Import',  maps_import_path
+              %li.divider
+              %li.nav-header.version
+                Current revision: #{@map.version}
+              %li= link_to_function "Save revision",  "omml.save({versioning:true})"
+              %li= link_to "Show revisions", map_versions_path(@map, :format => :json), :remote => true, :id => :revertoversion
+              %li.divider
+              %li= link_to 'Public maps', maps_public_path
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              Sharing
+              %b.caret
+            %ul.dropdown-menu
+              - if @map.user == current_user
+                - if @map.isPublic
+                  %li= link_to_function "Set private", "omml.share()", :id => 'share_button'
+                - else
+                  %li= link_to_function "Set public", "omml.share()", :id => 'share_button'
+                - if @map.id
+                  %li= link_to_function "Invite friend", "$('#invite-user-modal').modal()"
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              Background
+              %b.caret
+            %ul.dropdown-menu
+              %li= link_to_function "Color", "toggleBackgroundColorpicker()", :id => 'colorpickerBackgroundHolder'
+              %li= link_to_function "Image", "toggleBackgroundLibrary()"
+              %li.divider
+              %li= link_to_function "Clear", "omml.resetBackground()"
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              Insert
+              %b.caret
+            %ul.dropdown-menu
+              %li= link_to_function "Image", "toggleClipartLibrary()"
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              Zoom
+              %b.caret
+            %ul.dropdown-menu
+              %li
+                #zoomSlider
+              %li.divider
+              %li= link_to_function "Reset", "resetZoom()"
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              Node
+              %b.caret
+            %ul.dropdown-menu
+              %li= link_to_function "Add child (INS, I)", "omml.selectedNodeActions('insertnode')"
+              %li= link_to_function "Add sibling (SHIFT+INS, SHIFT+I)", "omml.selectedNodeActions('insertsibling')"
+              %li= link_to_function "Delete (DEL)", "omml.selectedNodeActions('delete')"
+              %li.divider
+              %li
+                = link_to_function "Lock/Unlock (L)", "omml.selectedNodeActions('lockunlockchild')"
+                \-top
+              %li= link_to_function "Fold/Unfold (F)", "omml.selectedNodeActions('foldunflodchild')"
+              %li.divider
+              %li= link_to_function "Center root node on map", "omml.centerRootNode('foldunflodchild')"
+              %li= link_to_function "Center selected node on map", "omml.selectedNodeActions('centernode')"
+          %li.fullscreen-control
+            = link_to_function "Toggle fullscreen", "screenfull.toggle( document.documentElement );"
+          %li#play-map
+            = link_to_function "Play", "playMap()"
+          %li#play-next{:style => "display:none"}
+            = link_to_function "Next", "omml.next()"
+          %li#play-end{:style => "display:none"}
+            = link_to_function "Close", "closeMap()"
+          %li#play-idx{:style => "display:none;padding-top:10px"}
+          %li
+            %span#savemsg.label.label-info.hide Saving...
+
+    %ul.list.inline.session
+      - if user_signed_in?
+        %li#fat-menu.dropdown.user
+          %a.dropdown-toggle{'data-toggle' => 'dropdown', href: '#'}
+            -#= image_tag user_avatar(current_user)
+            - if current_user.name
+              %span= current_user.username
+            - else
+              %span= current_user.email
+              %i.icon-caret-down
+
+          %ul.dropdown-menu.up
+            %li= link_to 'Edit profile', edit_user_registration_path(current_user)
+            %li.divider
+            %li= link_to 'Sign out', destroy_user_session_path, method: :delete

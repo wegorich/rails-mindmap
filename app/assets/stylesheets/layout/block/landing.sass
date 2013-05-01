@@ -1,21 +1,35 @@
-$real-lang-size:144px
-$lang-size:200px
+$real-lang-size: 144px
+$lang-size: 200px
 .land-problem, .land-solution, .land-popular
   background: image_url('landing.png') no-repeat
   display: block
   width: $lang-size
   height: 136px
   margin-bottom: $main-margin
+
 .land-problem
   background-position: ($lang-size - $real-lang-size) 0
+
 .land-popular
-  background-position: 0 -136px
+  background-position: 0 -138px
+  height: 131px
+
 .land-solution
   background-position: ($lang-size - $real-lang-size)/2 -270px
-  height: 178px
+
 .landing
   text-align: center
   margin-top: $header-margin
+  .title
+    width: 14 * $layout-margin
+    margin: 0 auto
+    text-align: left
+    position: relative
+    padding: $layout-margin 0 $layout-margin 7* $main-padding
+    img
+      position: absolute
+      left: 0
+      top: 0
   h1, h2
     font-weight: normal
     font-size: 1.66em

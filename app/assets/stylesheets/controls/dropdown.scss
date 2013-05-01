@@ -29,7 +29,9 @@
     -webkit-background-clip: padding-box;
     -moz-background-clip: padding;
     background-clip: padding-box;
-
+    li > a{
+      box-shadow: none;
+    }
     & > .active {
       background: #fbfddf;
     }
@@ -45,11 +47,10 @@
       }
     }
 
-    &> li > a{
+    &> li {
       display: block;
       padding: 5px 15px;
       &:hover, &:focus {
-        text-shadow: none;
         color: #657b83;
         background: #fef9ec;
       }
@@ -87,6 +88,9 @@
   .footer {
     border-top: $base-border;
     padding: 5px 10px;
+    a{
+      box-shadow: none;
+    }
     i {
       color: $sub-gray;
     }

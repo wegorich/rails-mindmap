@@ -326,6 +326,9 @@ GEM
       websocket (~> 1.0.4)
     sexp_processor (4.2.1)
     signature (0.1.7)
+    simple_form (2.0.4)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     slop (3.4.4)
     sprockets (2.0.4)
       hike (~> 1.2)
@@ -401,6 +404,7 @@ DEPENDENCIES
   ruby_parser
   sass
   sass-rails
+  simple_form
   therubyracer (>= 0.11.3)
   thin
   turn

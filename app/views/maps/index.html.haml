@@ -1,5 +1,10 @@
-.page-header{:style => "margin-top:30px"}
-  %h1
-    Your maps
-    %small
-= render 'list'
+- unless user_signed_in?
+  = content_for :landing do
+    .full-main-content
+      = render partial: 'layouts/landing'
+      .ribbon
+        .wrapper
+          = render 'shared/login_options'
+
+.page-header
+  = render 'list'

@@ -43,7 +43,7 @@ form#new_user {
 }
 
 .ribbon {
-  background: $semi-greem;
+  background: lighten($header-green, 3);
   border-top: $base-border;
   margin-bottom: $main-padding;
   .wrapper {
@@ -60,12 +60,12 @@ form#new_user {
         content: ' ';
       }
       &:before {
-        @include triangle($main-padding, $dark-green, down-left);
+        @include triangle($main-padding, $sub-gray, down-left);
         right: 0;
 
       }
       &:after {
-        @include triangle($main-padding, $dark-green, down-right);
+        @include triangle($main-padding, $sub-gray, down-right);
         left: 0;
       }
     }
@@ -75,7 +75,7 @@ form#new_user {
 }
 
 .auth {
-  background: $light-green;
+  background: $sub-lame;
   font-size: 0;
   color: $dark-green;
   .block {

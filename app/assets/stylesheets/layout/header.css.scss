@@ -2,10 +2,12 @@
 
 header.page {
   $height: $header-height;
-  background: white;
+  background: $header-blue;
   height: $real-header-height;
+  box-shadow: 0 -6px 30px $gray;
   border: {
     bottom: $base-border;
+    bottom-color: #dda;
     top: $border-width solid $base-background-color;
   }
 
@@ -23,23 +25,19 @@ header.page {
     position: absolute;
     z-index: 110;
     margin: 0;
-    .dropdown-toggle {
-      background: image-url('logo.png');
+    a {
+      background: image-url('logo_small.png') no-repeat;
       width: $header-logo-width;
       height: $header-height;
       display: block;
       color: transparent;
-    }
-    .dropdown-menu {
-      top: 96%;
-      width: 250px;
     }
   }
 
   .search {
     float: left;
     width: 70.0%;
-    padding: 0 0 0 25%;
+    padding: 0 0 0 20%;
 
     margin: {
       left: 0;
@@ -129,6 +127,7 @@ header.page {
         white-space: nowrap;
         color: $sub-gray;
         font-size: 1.2em;
+        box-shadow: none;
         span {
           display: inline-block;
           vertical-align: middle;

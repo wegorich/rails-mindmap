@@ -4,11 +4,11 @@ footer.page {
   position: absolute;
   bottom: 0;
   width: 100%;
+  background: $footer-back;
   line-height: $footer-height;
+  border-top: $base-border;
+  border-top-color: $black;
   a, & {
-    color: $gray;
-  }
-  .wrapper > * {
-    border-top: $base-border;
+    color: $lame;
   }
 }
