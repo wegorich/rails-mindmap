@@ -1,0 +1,11 @@
+.thumbnails{
+  @include clearfix;
+  li{
+    float: left;
+    width: 50%;
+    padding-left: $layout-margin;
+    &:first-child{
+      padding-left: 0;
+    }
+  }
+}

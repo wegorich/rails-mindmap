@@ -2,12 +2,12 @@
   position: relative;
   width: 100%;
   font-weight: normal;
-  height: $input-height;
-  padding: $input-padding;
+  height: $button-height;
+  padding: $button-padding;
   font-size: 14px;
   border: $base-border;
   background-color: white;
-  border-radius: $input-border-radius;
+  border-radius: $main-margin / 3;
   behavior: url(/assets/PIE.htc);
   &:focus {
     border-color: dodgerblue;
