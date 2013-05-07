@@ -1,4 +1,4 @@
-%h2 = t('map.choose_style')
+%h2= t('map.choose_style')
 %ul.thumbnails
   %li.span3
     .thumbnail
@@ -13,5 +13,4 @@
       .caption
         %h5= t('map.style.mind')
         %p{:style => "height:100px"}= t('map.type.mind_decription')
-        =
         %p= link_to t('btn.new.mind_map'), maps_path(:map => {:conf => 'mindmap'}), :method => :create, :class => 'btn btn-regular'

@@ -31,7 +31,7 @@ ru:
     header:
       public_map: "Публичные карты"
       new_map: "Новые карты"
-      import_map: "Import Map"
+      import_map: "Загрузить карту"
       edit_profile: "Править профиль"
       sign_out: "Выйти"
       login_with: "Войти через..."

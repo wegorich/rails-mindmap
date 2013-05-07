@@ -51,6 +51,8 @@ ru:
       user:
         name: "Имя"
         email: "Электронная почта"
+        password: "Пароль"
+        current_password: "Текущий пароль"
       item:
         title: "Заголовок"
         markdown: "Текст статьи"
