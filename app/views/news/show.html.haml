@@ -1,13 +1,14 @@
 %p#notice= notice
 %p
-  %b Title:
+  %b = t('label.title')
   = @news.title
 %p
-  %b Content:
+  %b = t('label.content')
   = @news.content
 %p
-  %b User:
+  %b = t('label.user')
   = @news.user_id
-= link_to 'Edit', edit_news_path(@news)
+
+= link_to t('btn.edit'), edit_news_path(@news)
 |
 \#{link_to 'Back', news_index_path}

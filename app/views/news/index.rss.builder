@@ -1,8 +1,8 @@
 xml.instruct! :xml, :version => "1.0" 
 xml.rss :version => "2.0" do
   xml.channel do
-    xml.title "OpenMindMap News"
-    xml.description "News about the development of OpenMindMap"
+    xml.title t('rss.title')
+    xml.description t('rss.description')
     xml.link news_index_url
 
     for news in @news

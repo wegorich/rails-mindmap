@@ -1,6 +1,6 @@
-%h1 Import Freemind Map
+%h1= t('select.freemind_title')
 .hero-unit
   = form_tag(maps_import_path, :method => :post, :multipart => true) do
-    = label_tag(:freemind_file, "Select Freemind file from your computer")
+    = label_tag(:freemind_file, t('select.freemind'))
     = file_field_tag :freemind_file
     = submit_tag :Upload!

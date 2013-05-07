@@ -3,3 +3,157 @@
 
 en:
   hello: "Hello world"
+  sorry:
+    ie: "Sorry but... eMinder doesnt work with Internet Explorer!"
+    no_public_map: "Ops! This is embarrassing... we dont have a public maps yet!"
+    forgot_password: "Forgot your password?"
+  download:
+    chrome: "Please download and install Google Chrome by clicking here"
+  sign:
+    create_new_map: "Can\'t wait? Sing in for free and create a new map >>"
+    up: "Sign up"
+  btn:
+    update: "Update"
+    edit: "Edit"
+    new:
+      mind_map: "New Mind Map"
+      dialogue: "New Dialogue Map"
+      map: "New map"
+    revoke: "Revoke"
+    delete: "Delete"
+    show: "Show"
+    add:
+      collaborator: "Add collaborator"
+    close: "Close"
+    cancel: "Cancel"
+    confirm: "Confirm"
+    remove_background: "Remove background"
+    header:
+      public_map: "Public maps"
+      new_map: "New Map"
+      import_map: "Import Map"
+      edit_profile: "Edit profile"
+      sign_out: "Sign out"
+      login_with: "Login with..."
+      new_username: "Username and password"
+      node:
+        name: "Node"
+        add: "Add child (INS, I)"
+        add_sibling: "Add sibling (SHIFT+INS, SHIFT+I)"
+        delete: "Delete (DEL)"
+        lock: "Lock/Unlock (L)"
+        fold: "Fold/Unfold (F)"
+        center_root: "Center root node on map"
+        center_selected: "Center selected node on map"
+      zoom: "Zoom"
+      maps:
+        name: "Maps"
+        new: "New"
+        import: "Import"
+        current_revision: "Current revision:"
+        save_revision: "Save revision"
+        show_revision: "Show revisions"
+        public: "Public maps"
+      sharing:
+        name: "Sharing"
+        set_private: "Set private"
+        set_public: "Set public"
+        invite_friend: "Invite friend"
+      background:
+        name: "Background"
+        color: "Color"
+        image: "Image"
+        clear: "Clear"
+      insert:
+        name: "Insert"
+        image: "Image"
+    play: "Play"
+    next: "Next"
+    toggle_fullscreen: "Toggle fullscreen"
+    reset: "Reset"
+    reset_unlock: "Resend unlock instructions"
+    sign_in: "Sign in"
+    sign_up: "Sign up"
+    forgot_password: "Forgot your password?"
+    didnt_receive_instructions: "Didn't receive confirmation instructions?"
+    didnt_receive_unlock: "Didn't receive unlock instructions?"
+    send:
+      forgot_password: "Send me reset password instructions"
+      change_password: "Change my password"
+      resend_confirm: "Resend confirmation instructions"
+    save_page: "Save page"
+    back_to_map: "Back to map"
+    live_preview: "Live preview"
+    show_map: "Show map"
+    cheatsheet: "Cheatsheet"
+  account:
+    cancel: "Cancel my account"
+    unhappy: "Unhappy? #"
+    sure: "Are you sure?"
+    password:
+      leave_blank: "Leave blank if you don't want to change i"
+      current: "We need your current password to confirm your change"
+    login_to: "Login to"
+    login_to_change: "to change your profile informations."
+  label:
+    title: "Title"
+    content: "Content"
+    user: "User"
+  rss:
+    title: "eMinder News"
+    description: "News about the development of eMinder"
+    page_title: "Last eMinder new"
+  map:
+    choose_style: "Choose your map styl"
+    style:
+      dialogue: "Dialogue map"
+      mind: "Mind map"
+    type:
+      dialogue_description: "Dialogue Mapping™ is a radically inclusive facilitation process that creates a diagram or 'map' that captures and connects participants' comments as a meeting conversation unfolds."
+      mind_decription: "A mind map is a diagram used to represent words, ideas, tasks, or other items linked to and arranged around a central key word or idea."
+    shared: "Shared"
+    public: "Public"
+    dont_have: "Ops! You dont have a maps yet!"
+    start_first: "Let\'s start with the first!"
+    table:
+      title: "Title"
+      owner: "Owner"
+      last_modified: "Last modified"
+      actions: "Actions"
+    share_with_user: "Share map with user"
+    versioning: "Map versioning"
+  select:
+    freemind: "Select Freemind file from your computer"
+    freemind_title: "Import Freemind Map"
+  user:
+    me: "me"
+    collaborators: "List of current collaborators"
+    change_password: "Change your password"
+    new_password: "New password"
+    confirm_new_password: "Confirm new password"
+    resend_confirm: "Resend confirmation instructions"
+  hud:
+    node_link: "Open node link"
+    wiki_page: "Wiki page"
+    background_color: "Background color"
+    map_is: "Map is"
+    public: "public"
+  youtube:
+    terms: "Terms"
+    search: "Search for YouTube video"
+  landing:
+    title: "eMinder the simple and free"
+    sub_title: "the best way to map your mind"
+    block:
+      hi_title: "Hi, maperino!"
+      hi_description: "eMinder is a new online collaborative tool for mind mapping and dialogue mapping!Its free for everyone register in this beta period! Please sing in, use it and feedback!"
+      mind_title: "Mind map"
+      mind_description: "A mind map is a diagram used to represent words, ideas, tasks,           or other items linked to and arranged around a central key word or idea."
+      dialogue_title: "Dialogue map"
+      dialogue_description: "Dialogue Mapping™ is a radically inclusive facilitation process that creates a diagram or map that captures and connects participants comments as a meeting conversation unfolds."
+  loading:
+    saving: "Saving..."
+  reset_unlock_instructions: "Resend unlock instructions"
+  markdown:
+    title: "Markdown cheatsheet"
+    insert: "Insert here your wiki text with markdown syntax"

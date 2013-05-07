@@ -1,16 +1,17 @@
-%h2 Choose your map style
+%h2 = t('map.choose_style')
 %ul.thumbnails
   %li.span3
     .thumbnail
       = image_tag 'dialoguemap_small_template.png'
       .caption
-        %h5 Dialogue map
-        %p{:style => "height:100px"} Dialogue Mapping™ is a radically inclusive facilitation process that creates a diagram or 'map' that captures and connects participants' comments as a meeting conversation unfolds.
-        %p= link_to 'New Dialogue Map', maps_path(:map => {:conf => 'dialoguemap'}), :method => :create, :class => 'btn btn-primary'
+        %h5= t('map.style.dialogue')
+        %p{:style => "height:100px"}= t('map.type.dialogue_description')
+        %p= link_to t('btn.new.dialogue'), maps_path(:map => {:conf => 'dialoguemap'}), :method => :create, :class => 'btn btn-regular'
   %li.span3
     .thumbnail
       = image_tag 'mindmap_small_template.png'
       .caption
-        %h5 Mind map
-        %p{:style => "height:100px"} A mind map is a diagram used to represent words, ideas, tasks, or other items linked to and arranged around a central key word or idea.
-        %p= link_to 'New Mind Map', maps_path(:map => {:conf => 'mindmap'}), :method => :create, :class => 'btn btn-primary'
+        %h5= t('map.style.mind')
+        %p{:style => "height:100px"}= t('map.type.mind_decription')
+        =
+        %p= link_to t('btn.new.mind_map'), maps_path(:map => {:conf => 'mindmap'}), :method => :create, :class => 'btn btn-regular'

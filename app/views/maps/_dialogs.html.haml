@@ -2,11 +2,11 @@
   %textarea#inputBox{:style => "background-color:transparen"}
 #wiki.curtain.boxed.hide
 #clipart.curtain.boxed.hide
-  %button.btn{:onclick => "toggleClipartLibrary()"} Close
+  %button.btn{:onclick => "toggleClipartLibrary()"}= t('btn.close')
   %ul.thumbnails
 #backgounds.curtain.boxed.hide
-  %button.btn{:onclick => "toggleBackgroundLibrary()"} Close
-  %button.btn{:onclick => "resetBackgroundImage()"} Remove background
+  %button.btn{:onclick => "toggleBackgroundLibrary()"}= t('btn.close')
+  %button.btn{:onclick => "resetBackgroundImage()"}= t('btn.remove_background')
   %ul.thumbnails
 #attachment-modal.modal.hide.fade
   .modal-header
@@ -15,39 +15,39 @@
   .modal-body
     %p
   .modal-footer
-    %a.btn.close{"data-dismiss" => "modal", :href => "#"} Close
+    %a.btn.close{"data-dismiss" => "modal", :href => "#"}= t('btn.close')
 #youtube-modal.modal.hide.fade
   .modal-header
     %a.close{"data-dismiss" => "modal", :href => "#"} &times;
-    %h3 Search for YouTube video
+    %h3= t('youtube.search')
   .modal-body
     %p
-      %label{:for => "yt-query"} Terms
+      %label{:for => "yt-query"}= t('youtube.terms')
       %input#yt-query.search{:name => "yt-query", :type => "text"}/
     %input#guid{:type => "hidden"}/
   .modal-footer
-    %a.btn.close{"data-dismiss" => "modal", :href => "#"} Confirm
+    %a.btn.close{"data-dismiss" => "modal", :href => "#"}= t('btn.confirm')
 #colorpickerHolder{:style => "position: absolute;"}
 - if @map.id
   #versioning-modal.modal.hide.fade
     .modal-header
       %a.close{"data-dismiss" => "modal", :href => "#"} &times;
-      %h3 Map versioning
+      %h3= t('map.versioning')
     .modal-body
       %p
     .modal-footer
-      %a.btn.close{"data-dismiss" => "modal", :href => "#"} Cancel
+      %a.btn.close{"data-dismiss" => "modal", :href => "#"}= t('btn.cancel')
   #invite-user-modal.modal.hide.fade
     .modal-header
       %a.close{"data-dismiss" => "modal", :href => "#"} &times;
-      %h3 Share map with user
+      %h3= t('map.share_with_user')
     .modal-body
       %p
         = form_for @map, :remote => true do |f|
           = f.fields_for :users do |user_form|
             = user_form.autocomplete_field :user_email, autocomplete_user_email_contacts_path
-          = f.submit 'Add collaborator'
-      %h4 List of current collaborators
+          = f.submit t('btn.add.collaborator')
+      %h4= t('user.collaborators')
       #list-of-users= render :partial => "user", :locals => { :map => @map }
     .modal-footer
-      %a.btn.close{"data-dismiss" => "modal", :href => "#"} Close
+      %a.btn.close{"data-dismiss" => "modal", :href => "#"}= t('btn.close')

@@ -11,5 +11,5 @@
     .input
       = f.password_field :password, :class=>'xlarge'
   .action
-    = f.submit "Sign up", :class => 'btn primary'
+    = f.submit t('sign.up'), :class => 'btn btn-regular'
     \&nbsp;#{render :partial => "devise/shared/links"}

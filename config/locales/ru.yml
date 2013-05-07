@@ -1,0 +1,159 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+ru:
+  hello: "Hello world"
+  sorry:
+    ie: "Извините но... Мы не работаем с IE!"
+    no_public_map: "Ой йой! Как неловко... но у нас пока нету публичных карт"
+    forgot_password: "Подзабыли ваш пароль?"
+  download:
+    chrome: "Скачайте и установить Google Chrome нажав сюда"
+  sign:
+    create_new_map: "Надоело ждать? Войдите и приступите к созданию новой карты"
+    up: "Присоединиться"
+  btn:
+    update: "Обновить"
+    edit: "Править"
+    new:
+      mind_map: "Новая карта памяти"
+      dialogue: "Новая диалоговая карта"
+      map: "Новая карта"
+    revoke: "Отменить"
+    delete: "Удалить"
+    show: "Показать"
+    add:
+      collaborator: "Добавить друга"
+    close: "Закрыть"
+    cancel: "Отменить"
+    confirm: "Подтвердить"
+    remove_background: "Удалить фон"
+    header:
+      public_map: "Публичные карты"
+      new_map: "Новые карты"
+      import_map: "Import Map"
+      edit_profile: "Править профиль"
+      sign_out: "Выйти"
+      login_with: "Войти через..."
+      new_username: "Имя и пароль"
+      node:
+        name: "Узел"
+        add: "Добавить (INS, I)"
+        add_sibling: "Копировать (SHIFT+INS, SHIFT+I)"
+        delete: "Удалить (DEL)"
+        lock: "Блокировать/Разблокировать (L)"
+        fold: "Свернуть/Развернуть (F)"
+        center_root: "Переместиться к корню"
+        center_selected: "Переместится к выбранному узлу"
+      zoom: "Увеличить"
+      maps:
+        name: "Карты"
+        new: "Новая"
+        import: "Имопртировать"
+        current_revision: "Текущая версия:"
+        save_revision: "Сохранить версию"
+        show_revision: "Показать историю"
+        public: "Публичные карты"
+      sharing:
+        name: "Доступ"
+        set_private: "Сделать личной"
+        set_public: "Сделать публичной"
+        invite_friend: "Послать другу"
+      background:
+        name: "Фон"
+        color: "Цвет"
+        image: "Картинка"
+        clear: "Очистить"
+      insert:
+        name: "Вставить"
+        image: "Картинку"
+    play: "Пройтись"
+    next: "Далее"
+    toggle_fullscreen: "Во весь экран"
+    reset: "Отменить"
+    reset_unlock: "Переотправить инструкцию к разблокировке"
+    sign_in: "Войти"
+    sign_up: "Присоединиться"
+    forgot_password: "Забыли пароль?"
+    didnt_receive_instructions: "Не получили инструкцию с подтверждением?"
+    didnt_receive_unlock: "Не получили инстркцию к разблокировке?"
+    send:
+      forgot_password: "Отправить инструкцию для сброса пароля"
+      change_password: "Изменить пароль"
+      resend_confirm: "Переслать инструкцию для подтверждения"
+    save_page: "Сохранить страницу"
+    back_to_map: "Назад к карте"
+    live_preview: "Предпросмотр"
+    show_map: "Показать карту"
+    cheatsheet: "Таблица стилей"
+  account:
+    cancel: "Отменить аккаунт"
+    unhappy: "Грусненько?"
+    sure: "Вы уверены?"
+    password:
+      leave_blank: "Оставьте пустым если не хотите менять"
+      current: "Нужен текущий пароль для работы"
+    login_to: "Войдите"
+    login_to_change: "чтобы изменить личную информацию"
+  label:
+    title: "Название"
+    content: "Содержание"
+    user: "Пользователь"
+  rss:
+    title: "RSS новости"
+    description: "Новости разработки"
+    page_title: "Последние новости"
+  map:
+    choose_style: "Выберите стиль карты"
+    style:
+      dialogue: "Диалоговая карта"
+      mind: "Карта памяти"
+    type:
+      dialogue_description: "Диалогавая карта является радикальным упрощение процесса интеграции, по средством создания диаграммы или «карты», которая захватывает и связывает комментарии участников встречи, как процесс разговора."
+      mind_decription: "Карта памяти - схема используется для представления слова, идеи, задачи или других предметов, связанного и расположеного вокруг центрального ключевого слова или идеи."
+    shared: "Общая"
+    public: "Публичные"
+    dont_have: "Опаньки! У вас пока нету карт!"
+    start_first: "Дайвайте приступим к созданию первой!"
+    table:
+      title: "Название"
+      owner: "Автор"
+      last_modified: "Последние изменение"
+      actions: "Действия"
+    share_with_user: "Поделиться с пользователями"
+    versioning: "Версии карты"
+  select:
+    freemind: "Выберите Freemind файл на компьютере"
+    freemind_title: "Импортировать Freemind карту"
+  user:
+    me: "я"
+    collaborators: "Список друзей"
+    change_password: "Изменить пароль"
+    new_password: "Новый пароль"
+    confirm_new_password: "Подтвердить новый пароль"
+    resend_confirm: "Переслать писмо с подтверждением"
+  hud:
+    node_link: "Открыть ссылку"
+    wiki_page: "Wiki страничка"
+    background_color: "Фоновый цвет"
+    map_is: "Карта"
+    public: "публичная"
+  youtube:
+    terms: "Правила"
+    search: "Искать видео на YouTube"
+  landing:
+    title: "eMinder - простые карты"
+    sub_title: "изобрази свой внутренний мир"
+    block:
+      hi_title: "Приветствую, новеньких!"
+      hi_description: "eMinder это новый онлайн инструмент для создания совместных карт памяти и диалоговых карт! Это свободный для всех и вся сайт. Присоединяйтесь, и пробуйте!"
+      mind_title: "Карты памяти"
+      mind_description: "Карта памяти - схема используется для представления слова, идеи, задачи или других предметов, связанного и расположеного вокруг центрального ключевого слова или идеи."
+      dialogue_title: "Диалоговая карта"
+      dialogue_description: "Диалогавая карта - путь создания диаграммы или «карты», которая захватывает и связывает комментарии участников встречи, как процесс разговора."
+  loading:
+    saving: "Сохранение..."
+  reset_unlock_instructions: "Переслать инструкцию по разблокированию"
+  markdown:
+    title: "Таблица разметки"
+    insert: "Вставьте свой wiki текст с правильной разметкой"

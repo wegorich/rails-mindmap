@@ -10,81 +10,83 @@
         %ul.list.inline
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-              Maps
+              = t('btn.header.maps.name')
               %b.caret
             %ul.dropdown-menu
-              %li= link_to 'New', new_map_path
-              %li= link_to 'Import',  maps_import_path
+              %li= link_to t('btn.header.maps.new'), new_map_path
+              %li= link_to t('btn.header.maps.import'),  maps_import_path
               %li.divider
               %li.nav-header.version
-                Current revision: #{@map.version}
-              %li= link_to_function "Save revision",  "omml.save({versioning:true})"
-              %li= link_to "Show revisions", map_versions_path(@map, :format => :json), :remote => true, :id => :revertoversion
+                = t('btn.header.maps.current_revision')
+                = @map.version
+              %li= link_to_function t('btn.header.maps.save_revision'),  "omml.save({versioning:true})"
+              %li= link_to t('btn.header.maps.show_revision'), map_versions_path(@map, :format => :json), :remote => true, :id => :revertoversion
               %li.divider
-              %li= link_to 'Public maps', maps_public_path
+              %li= link_to t('btn.header.maps.public'), maps_public_path
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-              Sharing
+              = t('btn.header.sharing.name')
               %b.caret
             %ul.dropdown-menu
               - if @map.user == current_user
                 - if @map.isPublic
-                  %li= link_to_function "Set private", "omml.share()", :id => 'share_button'
+                  %li= link_to_function t('btn.header.sharing.set_private'), "omml.share()", :id => 'share_button'
                 - else
-                  %li= link_to_function "Set public", "omml.share()", :id => 'share_button'
+                  %li= link_to_function t('btn.header.sharing.set_public'), "omml.share()", :id => 'share_button'
                 - if @map.id
-                  %li= link_to_function "Invite friend", "$('#invite-user-modal').modal()"
+                  %li= link_to_function t('btn.header.sharing.invite_friend'), "$('#invite-user-modal').modal()"
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-              Background
+              = t('btn.header.background.name')
               %b.caret
             %ul.dropdown-menu
-              %li= link_to_function "Color", "toggleBackgroundColorpicker()", :id => 'colorpickerBackgroundHolder'
-              %li= link_to_function "Image", "toggleBackgroundLibrary()"
+              %li= link_to_function t('btn.header.background.color'), "toggleBackgroundColorpicker()", :id => 'colorpickerBackgroundHolder'
+              %li= link_to_function t('btn.header.background.image'), "toggleBackgroundLibrary()"
               %li.divider
-              %li= link_to_function "Clear", "omml.resetBackground()"
+              %li= link_to_function t('btn.header.background.clear'), "omml.resetBackground()"
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-              Insert
+              = t('btn.header.insert.name')
               %b.caret
             %ul.dropdown-menu
-              %li= link_to_function "Image", "toggleClipartLibrary()"
+              %li= link_to_function t('btn.header.insert.image'), "toggleClipartLibrary()"
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-              Zoom
+              = t('btn.header.zoom')
               %b.caret
             %ul.dropdown-menu
               %li
                 #zoomSlider
               %li.divider
-              %li= link_to_function "Reset", "resetZoom()"
+              %li= link_to_function t('btn.reset'), "resetZoom()"
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-              Node
+              = t('btn.header.node.name')
               %b.caret
             %ul.dropdown-menu
-              %li= link_to_function "Add child (INS, I)", "omml.selectedNodeActions('insertnode')"
-              %li= link_to_function "Add sibling (SHIFT+INS, SHIFT+I)", "omml.selectedNodeActions('insertsibling')"
-              %li= link_to_function "Delete (DEL)", "omml.selectedNodeActions('delete')"
+              %li= link_to_function t('btn.header.node.add'), "omml.selectedNodeActions('insertnode')"
+              %li= link_to_function t('btn.header.node.add_sibling'), "omml.selectedNodeActions('insertsibling')"
+              %li= link_to_function t('btn.header.node.delete'), "omml.selectedNodeActions('delete')"
               %li.divider
               %li
-                = link_to_function "Lock/Unlock (L)", "omml.selectedNodeActions('lockunlockchild')"
+                = link_to_function t('btn.header.node.lock'), "omml.selectedNodeActions('lockunlockchild')"
                 \-top
-              %li= link_to_function "Fold/Unfold (F)", "omml.selectedNodeActions('foldunflodchild')"
+              %li= link_to_function t('btn.header.node.fold'), "omml.selectedNodeActions('foldunflodchild')"
               %li.divider
-              %li= link_to_function "Center root node on map", "omml.centerRootNode('foldunflodchild')"
-              %li= link_to_function "Center selected node on map", "omml.selectedNodeActions('centernode')"
+              %li= link_to_function t('btn.header.node.center_root'), "omml.centerRootNode('foldunflodchild')"
+              %li= link_to_function = t('btn.header.node.center_selected'), "omml.selectedNodeActions('centernode')"
           %li.fullscreen-control
-            = link_to_function "Toggle fullscreen", "screenfull.toggle( document.documentElement );"
+            = link_to_function t('btn.toggle_fullscreen'), "screenfull.toggle( document.documentElement );"
           %li#play-map
-            = link_to_function "Play", "playMap()"
+            = link_to_function t('btn.play'), "playMap()"
           %li#play-next{:style => "display:none"}
-            = link_to_function "Next", "omml.next()"
+            = link_to_function t('btn.next'), "omml.next()"
           %li#play-end{:style => "display:none"}
-            = link_to_function "Close", "closeMap()"
+            = link_to_function t('btn.close'), "closeMap()"
           %li#play-idx{:style => "display:none;padding-top:10px"}
           %li
-            %span#savemsg.label.label-info.hide Saving...
+            %span#savemsg.label.label-info.hide
+              = t('loading.saving')
 
     %ul.list.inline.session
       - if user_signed_in?
@@ -98,6 +100,6 @@
               %i.icon-caret-down
 
           %ul.dropdown-menu.up
-            %li= link_to 'Edit profile', edit_user_registration_path(current_user)
+            %li= link_to t('btn.header.edit_profile'), edit_user_registration_path(current_user)
             %li.divider
-            %li= link_to 'Sign out', destroy_user_session_path, method: :delete
+            %li= link_to t('btn.header.sign_out'), destroy_user_session_path, method: :delete

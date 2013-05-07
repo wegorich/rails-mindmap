@@ -17,7 +17,7 @@
     .input-prepend
       %a#node-link.btn.btn-inverse.btn-mini{:href => "#", :target => "_blank"}
         %i.icon-white.icon-magnet
-        Open node link
+        = t('hud.node_link')
     .btn-group
       %button#btn-bold.btn.btn-inverse.btn-mini{"data-toggle" => "button"}
         %i.icon-bold.icon-white
@@ -31,13 +31,13 @@
         %i.icon-remove.icon-white
     .hud-wiki
       %label
-        Wiki page
+        = t('hud.wiki_page')
       #hud-wiki-content
       .btn-group
-        %button#btn-hud-wiki-show.btn.btn-success Show
-        %button#btn-hud-wiki-edit.btn.btn-primary Edit
+        %button#btn-hud-wiki-show.btn.btn-success= t('btn.show')
+        %button#btn-hud-wiki-edit.btn.btn-regular= t('btn.edit')
   #map-hud
-    Background color
+    = t('hud.background_color')
     .input-prepend
       %span.add-on
         %i.icon-tint
@@ -45,7 +45,7 @@
     .btn-group
       %button#btn-share.btn.btn-inverse.btn-mini{"data-toggle" => "button"}
         %i.icon-white.icon-eye-open
-        Map is
-        %span public
+        = t('hud.map_is')
+        %span= t('hud.public')
       %button#btn-fold.btn.btn-inverse.btn-mini{"data-toggle" => "button"}
         %i.icon-plus.icon-white

@@ -2,28 +2,25 @@
   %section.title
     = image_tag 'logo.png'
     %h1
-      eMinder the simple and free
+      = t('landing.title')
     %h2
-      the best way to map your mind
+      = t('landing.sub_title')
   %section.info
     %ul.list.inline
       %li
         %i.land-problem
-        %h2 Hi, maperino!
+        %h2= t('landing.block.hi_title')
         %p
-          OpenMindMap is a new online collaborative tool for mind mapping and dialogue mapping!
-          It's free for everyone register in this beta period! Please sing in, use it and feedback!
+          = t('landing.block.hi_description')
       %li
         %i.land-solution
-        %h2 Mind map
+        %h2= t('landing.block.mind_title')
         %p
-          A mind map is a diagram used to represent words, ideas, tasks,
-          or other items linked to and arranged around a central key word or idea.
-          \#{link_to :Wikipedia, 'http://en.wikipedia.org/wiki/Mind_map', :target => 'blank'}.
+          = t('landing.block.mind_description')
+          = link_to 'Wikipedia', 'http://en.wikipedia.org/wiki/Mind_map', :target => 'blank'
       %li
         %i.land-popular
-        %h2 Dialogue map
+        %h2= t('landing.block.dialogue_title')
         %p
-          Dialogue Mapping™ is a radically inclusive facilitation process that creates a diagram
-          or 'map' that captures and connects participants' comments as a meeting conversation unfolds.
-          \#{link_to 'Cognexus institute', 'http://cognexus.org/id41.htm', :target => 'blank'}
+          = t('landing.block.dialogue_description')
+          = link_to 'Cognexus institute', 'http://cognexus.org/id41.htm', :target => 'blank'

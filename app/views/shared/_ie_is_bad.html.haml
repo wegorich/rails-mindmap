@@ -1,6 +1,8 @@
 - if browser.ie?
   .row{:style => "height:100px"}
     .offset2.span8
-      %h2 Sorry but... OpenMindMap doesn't work with Internet Explorer!
+      %h2
+        = t('sorry.ie')
       %p
-        %a{:href => "http://www.google.com/chrome", :target => "_blank"} Please download and install Google Chrome by clicking here
+        %a{:href => "http://www.google.com/chrome", :target => "_blank"}
+          = t('download.chrome')

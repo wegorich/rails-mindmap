@@ -7,9 +7,9 @@
     %section.search
       - if user_signed_in?
         %ul.list.inline
-          %li= link_to 'Public maps', maps_public_path
-          %li= link_to 'New Map',     new_map_path
-          %li= link_to 'Import Map',  maps_import_path
+          %li= link_to t('btn.header.public_map'), maps_public_path
+          %li= link_to t('btn.header.new_map'), new_map_path
+          %li= link_to t('btn.header.import_map'), maps_import_path
 
     %ul.list.inline.session
       - if user_signed_in?
@@ -43,15 +43,15 @@
               %i.icon-caret-down
 
           %ul.dropdown-menu.up
-            %li= link_to 'Edit profile', edit_user_registration_path(current_user)
+            %li= link_to t('btn.header.edit_profile'), edit_user_registration_path(current_user)
             %li.divider
-            %li= link_to 'Sign out', destroy_user_session_path, method: :delete
+            %li= link_to t('btn.header.sign_out'), destroy_user_session_path, method: :delete
         - else
           %a.dropdown-toggle{'data-toggle' => 'dropdown', href: '#'}
-            Login with...
+            = t('btn.header.login_with')
             %i.icon-caret-down
           %ul.dropdown-menu.up
-            %li= link_to 'Username and password', new_user_session_path
+            %li= link_to t('btn.header.new_username'), new_user_session_path
             %li.divider
             %li= link_to 'Facebook', user_omniauth_authorize_path(:facebook)
             %li= link_to 'Google', user_omniauth_authorize_path(:google_apps)

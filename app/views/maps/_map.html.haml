@@ -4,12 +4,14 @@
       = link_to map.title, edit_map_path(map)
       - if map.users.size > 0
         %span.label.label-success
-          Shared (#{map.users.size})
+          = t('map.shared')
+          (#{map.users.size})
       - if map.isPublic
-        %span.label.label-info Public
+        %span.label.label-info
+          = t('map.public')
     %td
       - if map.user == current_user
-        me
+        = t('user.me')
       - else
         = map.user.email
     %td
@@ -17,7 +19,7 @@
       - if map.last_editor && map.last_editor != current_user
         %small= map.last_editor.email
       - else
-        %small me
+        %small= t('user.me')
     %td
-      = link_to 'Edit', edit_map_path(map), :class => 'btn btn-success'
-      = link_to "Delete", map_path(map), :confirm => "Are you sure?", :method => :delete, :class => 'btn btn-danger'
+      = link_to t('btn.edit'), edit_map_path(map), class: 'btn btn-success'
+      = link_to t('btn.delete'), map_path(map), confirm: t('account.sure'), method: :delete, class: 'btn btn-danger'
