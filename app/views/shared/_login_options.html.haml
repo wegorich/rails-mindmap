@@ -1,17 +1,16 @@
 .auth
   .block
-    %form#new_user
+    = simple_form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
       %header
         %h2
           Зарегистрируйтесь!
         %p
           Что бы принять участие в коллективном решении проблем
       %section
-        = simple_form_for current_user, as: :user, url: registration_path(:user) do |f|
-          = f.email_field :email, placeholder: 'введите свой email'
-          .attach-group
-            = f.password_field :password, placeholder: 'пароль'
-            = f.submit 'Регистрация', class: 'btn btn-light-green'
+        = f.email_field :email, placeholder: 'введите свой email'
+        .attach-group
+          = f.password_field :password, placeholder: 'пароль'
+          = f.submit 'Регистрация', class: 'btn btn-light-green'
   .block
     %p
       или войдите c помощью аккаунта социальной сети:

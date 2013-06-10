@@ -7,19 +7,14 @@
 %h2
   Войти
 
-= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "form-horizontal"}) do |f|
-  .input
-    = f.label :email
-    = f.email_field :email, :class=>'xlarge'
-  .input
-    = f.label :password
-    = f.password_field :password, :class=>'xlarge'
+= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "form-horizontal"}) do |f|
+  = f.input :email, as: :email, :class=>'xlarge'
+  = f.input :password, :class=>'xlarge'
 
   .input
     = f.submit t('btn.sign_in'), :class => 'btn btn-light-green'
     &nbsp; &nbsp;
     - if devise_mapping.rememberable?
-      = f.label :remember_me, 'Запомнить меня'
-      = f.check_box :remember_me, :class=>'xlarge'
+      = f.input :remember_me, as: :boolean, label:'Запомнить меня', :class=>'xlarge'
 
     = render :partial => "devise/shared/links"

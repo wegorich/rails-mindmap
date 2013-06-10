@@ -5,14 +5,10 @@
   Страница регистрации
 
 %h2 Зарегистрироваться
-= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
   = devise_error_messages!
-  .input
-    = f.label :email
-    = f.email_field :email, :class=>'xlarge'
-  .input
-    = f.label :password
-    = f.password_field :password, :class=>'xlarge'
+  = f.input :email,as: :email, :class=>'xlarge'
+  = f.input :password, :class=>'xlarge'
   .input
     = f.submit t('sign.up'), :class => 'btn btn-light-green'
     \&nbsp;#{render :partial => "devise/shared/links"}
