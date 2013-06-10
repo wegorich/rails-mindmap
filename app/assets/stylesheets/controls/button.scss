@@ -15,7 +15,7 @@ $shadowBtnBack: #919191;
   text-decoration: none !important;
   position: relative;
   border: none;
-  border-radius: 2px;
+  border-radius: $main-margin / 3;
   background-color: #939389;
   cursor: pointer;
   text-align: left;
@@ -76,6 +76,11 @@ $shadowBtnBack: #919191;
 .btn-simple {
   color: white !important;
   background-color: #68a8ca;
+}
+
+.btn-red {
+  color: white !important;
+  background-color: $red;
 }
 
 .btn-inverse {

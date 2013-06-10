@@ -24,7 +24,7 @@
         $('#revertoversion').on('ajax:success', function(e, data){
             var buff = '';
             $(data).each(function(){
-                buff += "<a href='<%= map_versions_path(@map) %>/" + this.version.number + ".svg' class='lightbox btn' >" + 	this.version.number + '</a>'
+                buff += "<a href='<%= map_versions_path(@map) %>/" + this.version.number + ".svg' class='lightbox btn btn-regular' >" + 	this.version.number + '</a>'
             });
             $('#versioning-modal > .modal-body > p').html(buff);
             $('#versioning-modal').modal({

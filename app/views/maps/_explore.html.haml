@@ -7,4 +7,4 @@
         .thumbnail{:style => "height:100px;"}
           %a{:href => map_path(map)}
             %img{:alt => "15", :height => "90", :src => "data:image/svg+xml;charset=utf-8;base64,#{ActiveSupport::Base64.encode64(map.svgdata.to_s)}", :width => "90"}/
-  = link_to(t('sign.create_new_map'), new_map_path, :class => "btn btn-regular") unless user_signed_in?
+  = link_to(t('sign.create_new_map'), new_map_path, class: 'btn btn-regular') unless user_signed_in?

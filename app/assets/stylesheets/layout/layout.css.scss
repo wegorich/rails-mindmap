@@ -25,6 +25,16 @@ $tablet: new-breakpoint(max-width 768px 8);
   padding: 0;
 }
 
+.input{
+  margin-top: 20px;
+  .btn{
+    padding: 0 20px;
+  }
+  &:first-child{
+    margin-top: 0;
+  }
+}
+
 .no-padding {
   padding: 0 !important;
 }

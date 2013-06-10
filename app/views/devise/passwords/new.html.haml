@@ -1,9 +1,10 @@
 %h2= t('sorry.forgot_password')
-= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
-  = devise_error_messages!
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email
-  %div= f.submit t('btn.send.forgot_password'), class: 'btn'
-= render :partial => "devise/shared/links"
+.main-content
+  = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+    = devise_error_messages!
+    .input
+      = f.label :email
+      = f.email_field :email
+    .input
+      = f.submit t('btn.send.forgot_password'), class: 'btn btn-light-green'
+      = render :partial => "devise/shared/links"

@@ -1,19 +1,25 @@
+- content_for :aside do
+  = render partial: 'devise/shared/aside-info'
+
+- content_for :title do
+  Страница входа
+
 %h2
-  Sign in
+  Войти
+
 = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "form-horizontal"}) do |f|
-  .control-group
-    .controls
-      = f.label :email
-      = f.email_field :email, :class=>'xlarge'
-  .control-group
-    .controls
-      = f.label :password
-      = f.password_field :password, :class=>'xlarge'
-  - if devise_mapping.rememberable?
-    .control-group
-      .controls
-        = f.label :remember_me
-        = f.check_box :remember_me, :class=>'xlarge'
-  .form-actions
-    = f.submit t('btn.sign_in'), :class => 'btn btn-regular'
+  .input
+    = f.label :email
+    = f.email_field :email, :class=>'xlarge'
+  .input
+    = f.label :password
+    = f.password_field :password, :class=>'xlarge'
+
+  .input
+    = f.submit t('btn.sign_in'), :class => 'btn btn-light-green'
+    &nbsp; &nbsp;
+    - if devise_mapping.rememberable?
+      = f.label :remember_me, 'Запомнить меня'
+      = f.check_box :remember_me, :class=>'xlarge'
+
     = render :partial => "devise/shared/links"

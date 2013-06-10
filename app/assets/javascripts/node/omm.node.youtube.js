@@ -20,7 +20,7 @@ OpenMindMap.node.youtube = function(params){
 							 String.format('<param name="movie" value="http://www.youtube.com/v/{0}?version={1}&autohide={2}&showinfo={3}&autoplay={4}"></param>', ommnode.videoData.id, 3, 0, 0, 1) +
 			  				 '<param name="allowScriptAccess" value="always"></param>' +
 							 String.format('<embed src="http://www.youtube.com/v/{0}?version={1}&autohide={2}&showinfo={3}&autoplay={4}" type="application/x-shockwave-flash" allowscriptaccess="always" width="{5}" height="{6}"></embed></object>', ommnode.videoData.id, 3, 0, 0, 1, 500, 300) +
-							 String.format('<a href="#" class="btn" onclick="changeVideo(\'{0}\')">Change video</a>', ommnode.guid);
+							 String.format('<a href="#" class="btn btn-light-green" onclick="changeVideo(\'{0}\')">Change video</a>', ommnode.guid);
 			$('#attachment-modal .modal-body p').html(videoFrame);
 			$('#attachment-modal').modal({
 				keyboard: true,

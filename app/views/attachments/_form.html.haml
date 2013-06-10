@@ -4,11 +4,11 @@
   = form_for [@map, @attachment] do |f|
     .row
       .span9
-        = f.submit t('btn.save_page'), :class => 'btn success'
-        = link_to_function t('btn.back_to_map'), "backToMap(#{@map.id})", :class => 'btn primary'
-        = link_to_function t('btn.live_preview'), "$('#preview').fadeToggle()", :class => 'btn'
-        = link_to_function t('btn.show_map'), "$('#mappreview').fadeToggle()", :class => 'btn'
-        = link_to_function t('btn.cheatsheet'), "$('#markdown').fadeToggle()", :class => 'btn'
+        = f.submit t('btn.save_page'), :class => 'btn btn-light-green'
+        = link_to_function t('btn.back_to_map'), "backToMap(#{@map.id})", :class => 'btn btn-regular'
+        = link_to_function t('btn.live_preview'), "$('#preview').fadeToggle()", :class => 'btn btn-info'
+        = link_to_function t('btn.show_map'), "$('#mappreview').fadeToggle()", :class => 'btn btn-fb'
+        = link_to_function t('btn.cheatsheet'), "$('#markdown').fadeToggle()", :class => 'btn btn-warning'
       #wmd-button-bar.span7
     = f.text_area :content,                                                                |
       :value 	=> @attachment.content || t('markdown.insert'), |

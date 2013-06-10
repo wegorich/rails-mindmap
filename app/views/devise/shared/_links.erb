@@ -1,20 +1,12 @@
+&nbsp;
 <%- if controller_name != 'sessions' %>
-  <%= link_to t('btn.sign_in'), new_session_path(resource_name), :class => 'btn btn-success' %>
+  <%= link_to t('btn.sign_in'), new_session_path(resource_name) %>
 <% end -%>
 &nbsp;
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to t('btn.sign_up'), new_registration_path(resource_name), :class => 'btn'  %>
+  <%= link_to t('btn.sign_up'), new_registration_path(resource_name)  %>
 <% end -%>
 &nbsp;
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
-  <%= link_to t('btn.forgot_password'), new_password_path(resource_name), :class => 'btn'  %>
+  <%= link_to t('btn.forgot_password'), new_password_path(resource_name)  %>
 <% end -%>
-&nbsp;
-<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to t('btn.didnt_receive_instructions'), new_confirmation_path(resource_name), :class => 'btn'  %>
-<% end -%>
-&nbsp;
-<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-  <%= link_to t('btn.didnt_receive_unlock'), new_unlock_path(resource_name), :class => 'btn'  %>
-<% end -%>
-&nbsp;

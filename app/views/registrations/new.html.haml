@@ -1,15 +1,18 @@
-%h2 Sign up
+- content_for :aside do
+  = render partial: 'devise/shared/aside-info'
 
+- content_for :title do
+  Страница регистрации
+
+%h2 Зарегистрироваться
 = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
   = devise_error_messages!
-  .clearfix
+  .input
     = f.label :email
-    .input
-      = f.email_field :email, :class=>'xlarge'
-  .clearfix
+    = f.email_field :email, :class=>'xlarge'
+  .input
     = f.label :password
-    .input
-      = f.password_field :password, :class=>'xlarge'
-  .action
-    = f.submit t('sign.up'), :class => 'btn btn-regular'
+    = f.password_field :password, :class=>'xlarge'
+  .input
+    = f.submit t('sign.up'), :class => 'btn btn-light-green'
     \&nbsp;#{render :partial => "devise/shared/links"}
