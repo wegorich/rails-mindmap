@@ -51,7 +51,12 @@ $tablet: new-breakpoint(max-width 768px 8);
 .no-padding {
   padding: 0 !important;
 }
-
+.table{
+  width: 100%;
+  td{
+    text-align: center;
+  }
+}
 .no-data {
   text-align: center;
   color: $sub-gray;

@@ -1,5 +1,5 @@
 OpenMindMap.config.dialoguemap = {
-	name: 'Dialogue Map',
+	name: 'Диалогавая карта',
     node: {
         size: {
             width: 100,
@@ -9,8 +9,8 @@ OpenMindMap.config.dialoguemap = {
         },
         padding: 15,
         shape: 'rect',
-        text: 'New node',
-		defaultText : 'New map',
+        text: 'Новый узел',
+		defaultText : 'Новая карта',
         color: '#00f',
         radius: 10,
         root: {

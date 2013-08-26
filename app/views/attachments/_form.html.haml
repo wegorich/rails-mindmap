@@ -1,30 +1,31 @@
-.page-header
-  %h3= @title || @map.title
-%div{:style => "width:100%"}
-  = form_for [@map, @attachment] do |f|
-    .row
-      .span9
-        = f.submit t('btn.save_page'), :class => 'btn btn-light-green'
-        = link_to_function t('btn.back_to_map'), "backToMap(#{@map.id})", :class => 'btn btn-regular'
-        = link_to_function t('btn.live_preview'), "$('#preview').fadeToggle()", :class => 'btn btn-info'
-        = link_to_function t('btn.show_map'), "$('#mappreview').fadeToggle()", :class => 'btn btn-fb'
-        = link_to_function t('btn.cheatsheet'), "$('#markdown').fadeToggle()", :class => 'btn btn-warning'
-      #wmd-button-bar.span7
-    = f.text_area :content,                                                                |
-      :value 	=> @attachment.content || t('markdown.insert'), |
-      :id 	=> 'wmd-input',                                                                 |
-      :style 	=> 'width:100%'                                                              |
-    = f.hidden_field :kind, :value => 'wiki'
-    = f.hidden_field :node_uuid, :value => @node_uuid
+%h1.page-title= @title || @map.title
+
+= simple_form_for [@map, @attachment] do |f|
+  .span9
+    = link_to_function t('btn.back_to_map'), "backToMap(#{@map.id})", :class => 'btn btn-regular'
+    = link_to_function t('btn.live_preview'), "$('#preview').fadeToggle()", :class => 'btn btn-info'
+    = link_to_function t('btn.show_map'), "$('#mappreview').fadeToggle()", :class => 'btn btn-fb'
+    = link_to_function t('btn.cheatsheet'), "$('#markdown').fadeToggle()", :class => 'btn btn-warning'
+  #wmd-button-bar.span7
+  = f.input :content, as: :text, label: 'Текст wiki странички', |
+    placeholder: 'Опишите как можно подробнее страничку',   |
+    :value 	=> @attachment.content || t('markdown.insert'), |
+    :id 	=> 'wmd-input'                                                                                                                             |
+  = f.hidden_field :kind, :value => 'wiki'
+  = f.hidden_field :node_uuid, :value => @node_uuid
+  = f.submit t('btn.save_page'), :class => 'btn btn-light-green'
 #mappreview.boxed.hide.mappreview
+  = link_to 'Закрыть', '#', class: 'btn btn-warning close'
   %h3= @map.title
   %img{:src => "data:image/svg+xml;charset=utf-8;base64,#{ActiveSupport::Base64.encode64(@map.svgdata.to_s)}", :style => "width:100%;height:100%"}/
 #preview.hide
+  = link_to 'Закрыть', '#', class: 'btn btn-warning close'
   %h3
     = @title || @map.title
     (preview)
   #wmd-preview{:style => "background:white"}
 #markdown.boxed.hide.mappreview{:style => "max-height:70%;overflow:auto"}
+  = link_to 'Закрыть', '#', class: 'btn btn-warning close'
   %h3= t('markdown.title')
   %pre
     :preserve

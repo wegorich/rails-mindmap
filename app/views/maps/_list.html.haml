@@ -14,4 +14,8 @@
     - @shared_maps.each do |map|
       = render "map", :map => map
 
-  = link_to t('btn.new.map'), new_map_path, class: "btn btn-regular"
+- content_for :aside do
+  .aside-item.small
+    %p
+      В голову пришла новая идея? Хотите создать карту памяти?
+    = link_to t('btn.new.map'), new_map_path, class: "btn btn-regular"

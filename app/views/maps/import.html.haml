@@ -3,4 +3,4 @@
   = form_tag(maps_import_path, :method => :post, :multipart => true) do
     = label_tag(:freemind_file, t('select.freemind'))
     = file_field_tag :freemind_file
-    = submit_tag :Upload!
+    = submit_tag 'Загрузить', class:'btn btn-light-green'

@@ -19,8 +19,8 @@ OpenMindMap.config.mindmap = {
                 height: 60
             },
             position: {
-	            x: 3950,
-	            y: 2970
+                x: 50,
+                y: 50
             },
             style: OpenMindMap.node.classic
         },
@@ -28,8 +28,8 @@ OpenMindMap.config.mindmap = {
     },
     paper: {
         size: {
-            width: 8000,
-            height: 6000
+            width: 1388,
+            height: 600
         },
         color: '#333'
     },
